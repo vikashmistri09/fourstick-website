@@ -40,12 +40,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; width: 100%; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        * { box-sizing: border-box; }
     </style>
 </head>
-<body class="bg-brand-bg text-slate-100 antialiased selection:bg-brand-primary selection:text-white overflow-x-hidden relative">
+<body class="bg-brand-bg text-slate-100 antialiased selection:bg-brand-primary selection:text-white relative">
 
     <!-- LIGHTWEIGHT PREMIUM BACKGROUND GLOWS -->
     <div class="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none animate-float"></div>
@@ -86,7 +87,7 @@
                 </button>
             </div>
             <!-- Mobile Menu Toggle -->
-            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
+            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none cursor-pointer">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
@@ -187,7 +188,7 @@
         </div>
     </section>
 
-    <!-- ACTIVE PLATFORMS & AUTOMATION SECTION (Updated Sequence & Subtitles) -->
+    <!-- ACTIVE PLATFORMS & AUTOMATION SECTION -->
     <section class="py-20 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
@@ -196,32 +197,26 @@
                 <p class="text-slate-400 text-sm mt-4">We integrate deeply with modern growth infrastructure to maximize lead conversion and retention.</p>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-                <!-- 1. Google Ads / Meta Ads -->
                 <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
                     <div class="text-white font-bold text-base mb-1">Google Ads / Meta Ads</div>
                     <div class="text-xs text-slate-400">PMax, Search & Advantage+</div>
                 </div>
-                <!-- 2. Lead Generation / D2C -->
                 <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
                     <div class="text-white font-bold text-base mb-1">Lead Generation / D2C</div>
                     <div class="text-xs text-slate-400">High-Growth Funnels & Stores</div>
                 </div>
-                <!-- 3. CRM / Automation -->
                 <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
                     <div class="text-white font-bold text-base mb-1">CRM / Automation</div>
                     <div class="text-xs text-slate-400">HubSpot & Lead Pipelines</div>
                 </div>
-                <!-- 4. Whatsapp Automation -->
                 <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
                     <div class="text-white font-bold text-base mb-1">Whatsapp Automation</div>
                     <div class="text-xs text-slate-400">Automated Retargeting</div>
                 </div>
-                <!-- 5. AI Automation -->
                 <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
                     <div class="text-white font-bold text-base mb-1">AI Automation</div>
                     <div class="text-xs text-slate-400">Smart Workflows</div>
                 </div>
-                <!-- 6. Creative Suite / Studio -->
                 <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
                     <div class="text-white font-bold text-base mb-1">Creative Studio</div>
                     <div class="text-xs text-brand-accent font-semibold">High-Impact Ad Assets</div>
@@ -450,25 +445,25 @@
         </div>
     </footer>
 
-    <!-- POPUP MODAL -->
-    <div id="proposal-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 px-4">
-        <div class="bg-white text-slate-900 w-full max-w-5xl rounded-3xl p-8 sm:p-12 relative shadow-2xl transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto no-scrollbar">
+    <!-- POPUP MODAL (Mobile Responsive Fix) -->
+    <div id="proposal-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 p-4 overflow-y-auto">
+        <div class="bg-white text-slate-900 w-full max-w-4xl rounded-3xl p-6 sm:p-10 relative shadow-2xl transform scale-95 transition-transform duration-300 my-auto max-h-[90vh] overflow-y-auto no-scrollbar">
             <!-- Close Button -->
-            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-500 hover:text-slate-900 text-2xl font-bold focus:outline-none cursor-pointer">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-500 hover:text-slate-900 text-2xl font-bold focus:outline-none cursor-pointer z-10">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                 <!-- Left Column: Title & Info -->
-                <div class="space-y-8">
+                <div class="space-y-6">
                     <div>
-                        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
                             Send a <br>message.
                         </h2>
-                        <p class="mt-4 text-slate-600 text-sm">We're here to answer any question you may have.</p>
+                        <p class="mt-3 text-slate-600 text-sm">We're here to answer any question you may have.</p>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-8 pt-6 border-t border-slate-200">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-slate-200">
                         <div>
                             <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">careers</div>
                             <div class="text-xs text-slate-600 mb-1">Would you like to join our growing team?</div>
@@ -482,43 +477,34 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Updated Form Fields -->
+                <!-- Right Column: Form Fields -->
                 <div>
                     <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.'); closeModal();" class="space-y-4">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-medium text-slate-500 mb-1">Your Name</label>
-                                <input type="text" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="Vikash Mistri">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-medium text-slate-500 mb-1">Email Address</label>
-                                <input type="email" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="hello@fourstick.com">
-                            </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Your Name</label>
+                            <input type="text" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="Vikash Mistri">
                         </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-medium text-slate-500 mb-1">Phone Number</label>
-                                <input type="tel" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="+91 98765 43210">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-medium text-slate-500 mb-1">Company Name</label>
-                                <input type="text" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="Fourstick Agency">
-                            </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Email Address</label>
+                            <input type="email" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="hello@fourstick.com">
                         </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-medium text-slate-500 mb-1">Website</label>
-                                <input type="text" class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="https://yourbrand.com">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-medium text-slate-500 mb-1">Ads Budget</label>
-                                <input type="text" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="e.g. ₹2,00,000">
-                            </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Phone Number</label>
+                            <input type="tel" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="+91 98765 43210">
                         </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Company Name</label>
+                            <input type="text" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="Fourstick Agency">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Website</label>
+                            <input type="text" class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="https://yourbrand.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Ads Budget</label>
+                            <input type="text" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="e.g. ₹2,00,000">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs font-medium text-slate-500 mb-1">City</label>
                                 <input type="text" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="Mumbai">
@@ -537,6 +523,7 @@
             </div>
         </div>
     </div>
+
     <!-- Interactive Scripts -->
     <script>
         lucide.createIcons();
