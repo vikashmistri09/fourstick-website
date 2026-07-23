@@ -40,10 +40,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; width: 100%; }
+        /* MOBILE OVERFLOW & HORIZONTAL SCROLL FIX */
+        html, body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            overflow-x: hidden !important; 
+            width: 100%; 
+            max-width: 100vw;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        * { box-sizing: border-box; }
+        
         /* Hidden Honeypot Field for Spams */
         .hidden-honey { display: none !important; }
     </style>
@@ -469,12 +483,12 @@
                         <div>
                             <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">careers</div>
                             <div class="text-xs text-slate-600 mb-1">Would you like to join our growing team?</div>
-                            <a href="mailto:Hr@fourstick.com" class="text-xs font-bold text-slate-900 hover:underline">fourstick09@gmail.com</a>
+                            <a href="mailto:Hr@fourstick.com" class="text-xs font-bold text-slate-900 hover:underline">Hr@fourstick.com</a>
                         </div>
                         <div>
                             <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Feedbacks</div>
                             <div class="text-xs text-slate-600 mb-1">Have a project in mind?</div>
-                            <a href="mailto:Hi@fourstick.com" class="text-xs font-bold text-slate-900 hover:underline">fourstick09@gmail.com</a>
+                            <a href="mailto:Hi@fourstick.com" class="text-xs font-bold text-slate-900 hover:underline">Hi@fourstick.com</a>
                         </div>
                     </div>
                 </div>
