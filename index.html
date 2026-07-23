@@ -482,35 +482,53 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Form Fields -->
+                <!-- Right Column: Updated Form Fields -->
                 <div>
-                    <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.'); closeModal();" class="space-y-5">
-                        <div>
-                            <label class="block text-xs font-medium text-slate-500 mb-1">Your name?</label>
-                            <input type="text" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="Vikash Mistri">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-medium text-slate-500 mb-1">Your Email address?</label>
-                            <input type="email" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="hello@fourstick.com">
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.'); closeModal();" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-medium text-slate-500 mb-1">Your Phone Number?</label>
+                                <label class="block text-xs font-medium text-slate-500 mb-1">Your Name</label>
+                                <input type="text" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="Vikash Mistri">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-500 mb-1">Email Address</label>
+                                <input type="email" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="hello@fourstick.com">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-500 mb-1">Phone Number</label>
                                 <input type="tel" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="+91 98765 43210">
                             </div>
                             <div>
-                                <label class="block text-xs font-medium text-slate-500 mb-1">What's your budget?</label>
+                                <label class="block text-xs font-medium text-slate-500 mb-1">Company Name</label>
+                                <input type="text" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="Fourstick Agency">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-500 mb-1">Website</label>
+                                <input type="text" class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="https://yourbrand.com">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-500 mb-1">Ads Budget</label>
                                 <input type="text" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="e.g. ₹2,00,000">
                             </div>
                         </div>
-                        <div>
-                            <label class="block text-xs font-medium text-slate-500 mb-1">Your Website?</label>
-                            <input type="text" class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="https://yourbrand.com">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-500 mb-1">City</label>
+                                <input type="text" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="Mumbai">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-500 mb-1">State</label>
+                                <input type="text" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="Maharashtra">
+                            </div>
                         </div>
-                        <div>
-                            <label class="block text-xs font-medium text-slate-500 mb-1">Tell us about your project</label>
-                            <input type="text" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="Brief details about your brand goals...">
-                        </div>
+
                         <button type="submit" class="w-full bg-indigo-500 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-indigo-600 transition-all duration-200 mt-6 cursor-pointer tracking-wider text-xs uppercase">
                             SEND MESSAGE
                         </button>
@@ -519,7 +537,6 @@
             </div>
         </div>
     </div>
-
     <!-- Interactive Scripts -->
     <script>
         lucide.createIcons();
