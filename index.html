@@ -1,9 +1,178 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Fourstick</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fourstick - Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #ffffff;
+            position: relative;
+        }
+
+        /* Monsoon Rain Effect */
+        .raindrop {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            width: 1px;
+            height: 20px;
+            opacity: 0.7;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(105vh);
+            }
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #00dbde, #fc00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        .coming-soon {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            letter-spacing: 4px;
+            color: #a8dadc;
+            font-weight: 300;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .time-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            min-width: 70px;
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #48cae4;
+        }
+
+        .time-box p {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #adb5bd;
+            margin-top: 5px;
+        }
+
+        @media(max-width: 600px) {
+            h1 { font-size: 2.3rem; }
+            .coming-soon { font-size: 1.2rem; }
+            .time-box { min-width: 50px; padding: 10px; }
+            .time-box span { font-size: 1.4rem; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Fourstick! Site is live.</h1>
+
+    <div class="container">
+        <h1>Fourstick</h1>
+        <div class="coming-soon">Coming Soon</div>
+        
+        <div class="countdown">
+            <div class="time-box">
+                <span id="days">07</span>
+                <p>Days</p>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <p>Hours</p>
+            </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <p>Minutes</p>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <p>Seconds</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Monsoon Rain Generator
+        for (let i = 0; i < 100; i++) {
+            let drop = document.createElement('div');
+            drop.classList.add('raindrop');
+            drop.style.left = Math.random() * window.innerWidth + 'px';
+            drop.style.top = Math.random() * -100 + 'px';
+            drop.style.animationDuration = (0.5 + Math.random() * 0.5) + 's';
+            drop.style.animationDelay = Math.random() * 5 + 's';
+            document.body.appendChild(drop);
+        }
+
+        // 7 Days Countdown Timer Logic
+        // Set the date we're counting down to (7 days from now)
+        let countDownDate = new Date().getTime() + (7 * 24 * 60 * 60 * 1000);
+
+        let x = setInterval(function() {
+            let now = new Date().getTime();
+            let distance = countDownDate - now;
+
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.querySelector(".coming-soon").innerHTML = "We Are Live!";
+            }
+        }, 1000);
+    </script>
+
 </body>
 </html>
