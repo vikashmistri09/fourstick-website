@@ -1,178 +1,564 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fourstick - Coming Soon</title>
+    <title>FOURSTICK | Performance Marketing & Growth Partner</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#6366f1',
+                            accent: '#a855f7',
+                            card: '#0f0f14',
+                            bg: '#050507'
+                        }
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '50%': { transform: 'translate(30px, -20px) scale(1.05)' }
+                        }
+                    },
+                    animation: {
+                        marquee: 'marquee 25s linear infinite',
+                        float: 'float 12s ease-in-out infinite',
+                        'float-delayed': 'float 15s ease-in-out 4s infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            height: 100vh;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            color: #ffffff;
-            position: relative;
-        }
-
-        /* Monsoon Rain Effect */
-        .raindrop {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.4);
-            width: 1px;
-            height: 20px;
-            opacity: 0.7;
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(105vh);
-            }
-        }
-
-        .container {
-            text-align: center;
-            z-index: 10;
-            padding: 20px;
-            backdrop-filter: blur(5px);
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            max-width: 600px;
-            width: 90%;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            background: linear-gradient(45deg, #00dbde, #fc00ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-        }
-
-        .coming-soon {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            letter-spacing: 4px;
-            color: #a8dadc;
-            font-weight: 300;
-        }
-
-        /* Countdown Timer */
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .time-box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            min-width: 70px;
-        }
-
-        .time-box span {
-            display: block;
-            font-size: 2rem;
-            font-weight: bold;
-            color: #48cae4;
-        }
-
-        .time-box p {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: #adb5bd;
-            margin-top: 5px;
-        }
-
-        @media(max-width: 600px) {
-            h1 { font-size: 2.3rem; }
-            .coming-soon { font-size: 1.2rem; }
-            .time-box { min-width: 50px; padding: 10px; }
-            .time-box span { font-size: 1.4rem; }
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body>
+<body class="bg-brand-bg text-slate-100 antialiased selection:bg-brand-primary selection:text-white overflow-x-hidden relative">
 
-    <div class="container">
-        <h1>Fourstick</h1>
-        <div class="coming-soon">Coming Soon</div>
+    <!-- LIGHTWEIGHT PREMIUM BACKGROUND GLOWS -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none animate-float"></div>
+    <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[140px] pointer-events-none animate-float-delayed"></div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-bg/85 backdrop-blur-xl border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-extrabold tracking-tighter text-white flex items-center gap-2">
+                FOUR<span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">STICK</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                <a href="#services" class="hover:text-brand-primary transition">Services</a>
+                <a href="#work" class="hover:text-brand-primary transition">Portfolio</a>
+                <a href="#case-studies" class="hover:text-brand-primary transition">Case Studies</a>
+                <a href="#faq" class="hover:text-brand-primary transition">FAQ</a>
+                <!-- Ecosystem Dropdown linking to Instagram Pages -->
+                <div class="relative group py-2">
+                    <button class="flex items-center gap-1.5 text-slate-300 hover:text-white transition font-medium cursor-pointer">
+                        <span>Ecosystem</span>
+                        <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400"></i>
+                    </button>
+                    <div class="absolute top-full left-0 w-52 bg-brand-card border border-slate-800 rounded-xl shadow-2xl py-2 hidden group-hover:block transition-all">
+                        <a href="https://instagram.com/fourstick.ads" target="_blank" class="block px-4 py-2.5 hover:bg-slate-800/60 transition">
+                            <div class="text-xs font-bold text-white flex items-center justify-between">Fourstick Ads <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i></div>
+                            <div class="text-[10px] text-slate-400">Performance & Media Buying</div>
+                        </a>
+                        <a href="https://instagram.com/fourstick.studio" target="_blank" class="block px-4 py-2.5 hover:bg-slate-800/60 transition border-t border-slate-800/60">
+                            <div class="text-xs font-bold text-brand-accent flex items-center justify-between">Fourstick Studio <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i></div>
+                            <div class="text-[10px] text-slate-400">Creative Production & Assets</div>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <div class="hidden md:flex items-center gap-4">
+                <button onclick="openModal()" class="bg-gradient-to-r from-brand-primary to-brand-accent text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-brand-primary/20 cursor-pointer">
+                    Get Proposal
+                </button>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-slate-800 px-6 py-4 space-y-3">
+            <a href="#services" class="block text-slate-300 hover:text-white py-1.5">Services</a>
+            <a href="#work" class="block text-slate-300 hover:text-white py-1.5">Portfolio</a>
+            <a href="#case-studies" class="block text-slate-300 hover:text-white py-1.5">Case Studies</a>
+            <a href="#faq" class="block text-slate-300 hover:text-white py-1.5">FAQ</a>
+            <div class="py-2 border-t border-slate-800 space-y-2">
+                <a href="https://instagram.com/fourstick.ads" target="_blank" class="block text-xs font-bold text-white">Instagram: Fourstick Ads ↗</a>
+                <a href="https://instagram.com/fourstick.studio" target="_blank" class="block text-xs font-bold text-brand-accent">Instagram: Fourstick Studio ↗</a>
+            </div>
+            <button onclick="openModal()" class="w-full text-center bg-gradient-to-r from-brand-primary to-brand-accent text-white py-2.5 rounded-full font-semibold text-sm">Get Proposal</button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-brand-accent text-xs font-semibold mb-6">
+                <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span> Performance Marketing + High-Impact Creatives
+            </div>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
+                We Scale Brands Through <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">Data & Creatives</span>
+            </h1>
+            <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto">
+                Stop wasting ad spend. We engineer high-converting Meta & Google Ads funnels backed by custom pattern-interrupt creatives built to drive predictable revenue.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="openModal()" class="bg-gradient-to-r from-brand-primary to-brand-accent text-white px-8 py-4 rounded-xl font-bold text-base hover:opacity-90 hover:scale-[1.02] transition-all duration-200 shadow-xl shadow-brand-primary/25 flex items-center justify-center gap-2 cursor-pointer">
+                    Get Your Free Audit <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+                <a href="#work" class="bg-slate-900 border border-slate-800 text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-slate-800 hover:scale-[1.02] transition-all duration-200 flex items-center justify-center">
+                    Explore Portfolio
+                </a>
+            </div>
+            <!-- Trust Stats -->
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-slate-800/80 max-w-5xl mx-auto">
+                <div>
+                    <div class="text-3xl font-extrabold text-white">₹6Cr+</div>
+                    <div class="text-sm text-slate-400 mt-1">Ad Spend Managed</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-extrabold text-white">4.5x</div>
+                    <div class="text-sm text-slate-400 mt-1">Average ROAS</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-extrabold text-white">11+</div>
+                    <div class="text-sm text-slate-400 mt-1">Countries Served</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-extrabold text-white">100%</div>
+                    <div class="text-sm text-slate-400 mt-1">Execution Focused</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES / STRATEGY BLUEPRINT SECTION -->
+    <section id="services" class="py-20 bg-brand-card/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold tracking-widest uppercase text-brand-primary mb-3">How We Execute</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Our 4-Step Growth & Strategy Blueprint</h3>
+                <p class="text-slate-400 text-sm mt-3">A systematic approach to analyze, build, test, and relentlessly scale your acquisition pipeline.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-brand-card border border-slate-800 p-6 rounded-2xl hover:border-brand-primary/50 transition group">
+                    <div class="text-brand-primary font-mono text-xl font-bold mb-4">01</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Deep Audit & Research</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        We analyze historical ad accounts, competitor positioning, and audience leakage points to find hidden revenue opportunities.
+                    </p>
+                </div>
+                <div class="bg-brand-card border border-slate-800 p-6 rounded-2xl hover:border-brand-primary/50 transition group">
+                    <div class="text-brand-primary font-mono text-xl font-bold mb-4">02</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Funnel Architecture</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Designing high-converting landing pages and structured conversion journeys tailored specifically for your buyer persona.
+                    </p>
+                </div>
+                <div class="bg-brand-card border border-slate-800 p-6 rounded-2xl hover:border-brand-primary/50 transition group">
+                    <div class="text-brand-primary font-mono text-xl font-bold mb-4">03</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Ad Creative Production</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Crafting high-performing thumb-stopping video edits, UGC frameworks, and statics custom-tailored for maximum CTR.
+                    </p>
+                </div>
+                <div class="bg-brand-card border border-slate-800 p-6 rounded-2xl hover:border-brand-primary/50 transition group">
+                    <div class="text-brand-primary font-mono text-xl font-bold mb-4">04</div>
+                    <h4 class="text-lg font-bold text-white mb-2">Media Buying & Scaling</h4>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Deploying rigorous testing frameworks across Meta and Google platforms while maintaining target acquisition costs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACTIVE PLATFORMS & AUTOMATION SECTION (Updated Sequence & Subtitles) -->
+    <section class="py-20 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold tracking-widest uppercase text-brand-accent mb-3">Ecosystem & Stack</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Active Working Platforms & Automation</h3>
+                <p class="text-slate-400 text-sm mt-4">We integrate deeply with modern growth infrastructure to maximize lead conversion and retention.</p>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- 1. Google Ads / Meta Ads -->
+                <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
+                    <div class="text-white font-bold text-base mb-1">Google Ads / Meta Ads</div>
+                    <div class="text-xs text-slate-400">PMax, Search & Advantage+</div>
+                </div>
+                <!-- 2. Lead Generation / D2C -->
+                <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
+                    <div class="text-white font-bold text-base mb-1">Lead Generation / D2C</div>
+                    <div class="text-xs text-slate-400">High-Growth Funnels & Stores</div>
+                </div>
+                <!-- 3. CRM / Automation -->
+                <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
+                    <div class="text-white font-bold text-base mb-1">CRM / Automation</div>
+                    <div class="text-xs text-slate-400">HubSpot & Lead Pipelines</div>
+                </div>
+                <!-- 4. Whatsapp Automation -->
+                <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
+                    <div class="text-white font-bold text-base mb-1">Whatsapp Automation</div>
+                    <div class="text-xs text-slate-400">Automated Retargeting</div>
+                </div>
+                <!-- 5. AI Automation -->
+                <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
+                    <div class="text-white font-bold text-base mb-1">AI Automation</div>
+                    <div class="text-xs text-slate-400">Smart Workflows</div>
+                </div>
+                <!-- 6. Creative Suite / Studio -->
+                <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
+                    <div class="text-white font-bold text-base mb-1">Creative Studio</div>
+                    <div class="text-xs text-brand-accent font-semibold">High-Impact Ad Assets</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES SECTION -->
+    <section id="case-studies" class="py-24 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div>
+                <h2 class="text-xs font-bold tracking-widest uppercase text-brand-primary mb-3">Proven Results</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Client Case Studies</h3>
+            </div>
+            <p class="text-slate-400 text-sm max-w-sm">Scroll horizontally to explore our milestone growth case studies across portfolios.</p>
+        </div>
         
-        <div class="countdown">
-            <div class="time-box">
-                <span id="days">07</span>
-                <p>Days</p>
+        <div class="w-full overflow-x-auto no-scrollbar px-4 sm:px-6 lg:px-8">
+            <div class="flex gap-6 pb-4 w-max">
+                <div class="w-[350px] sm:w-[450px] bg-brand-card border border-slate-800 rounded-2xl p-8 flex flex-col justify-between shrink-0 hover:border-brand-primary/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-brand-primary/10 text-brand-primary text-xs font-semibold rounded-full">D2C E-Commerce</span>
+                            <span class="text-xs text-slate-400">Meta Advantage+</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Scaling D2C Brand to ₹32L+ Monthly Revenue</h4>
+                        <p class="text-slate-400 text-sm mb-6">Built a custom creative testing framework combined with optimized ASC campaign architecture.</p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800">
+                        <div>
+                            <div class="text-xs text-slate-400">Ad Spend</div>
+                            <div class="text-base font-bold text-white">₹4.8 Lakhs</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">ROAS</div>
+                            <div class="text-base font-bold text-emerald-400">6.8x</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">Revenue</div>
+                            <div class="text-base font-bold text-white">₹32.6L</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-[350px] sm:w-[450px] bg-brand-card border border-slate-800 rounded-2xl p-8 flex flex-col justify-between shrink-0 hover:border-brand-primary/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-brand-accent/10 text-brand-accent text-xs font-semibold rounded-full">Real Estate Leads</span>
+                            <span class="text-xs text-slate-400">Google + Meta Hybrid</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">High-Ticket Qualified Leads for Luxury Real Estate</h4>
+                        <p class="text-slate-400 text-sm mb-6">Designed instant qualification landing funnels that lowered acquisition costs significantly.</p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800">
+                        <div>
+                            <div class="text-xs text-slate-400">Ad Spend</div>
+                            <div class="text-base font-bold text-white">₹2.5 Lakhs</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">Cost / Lead</div>
+                            <div class="text-base font-bold text-emerald-400">₹340</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">Closed Sales</div>
+                            <div class="text-base font-bold text-white">14 Units</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-[350px] sm:w-[450px] bg-brand-card border border-slate-800 rounded-2xl p-8 flex flex-col justify-between shrink-0 hover:border-brand-primary/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-semibold rounded-full">B2B SaaS</span>
+                            <span class="text-xs text-slate-400">LinkedIn & Google Search</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Enterprise Demo Pipeline Growth for B2B Tech</h4>
+                        <p class="text-slate-400 text-sm mb-6">Optimized user onboarding and high-intent keyword funnels for predictable bookings.</p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800">
+                        <div>
+                            <div class="text-xs text-slate-400">Ad Spend</div>
+                            <div class="text-base font-bold text-white">₹6.0 Lakhs</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">Demo CPL</div>
+                            <div class="text-base font-bold text-emerald-400">₹1,250</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">Pipeline</div>
+                            <div class="text-base font-bold text-white">₹1.4 Cr</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="time-box">
-                <span id="hours">00</span>
-                <p>Hours</p>
+        </div>
+    </section>
+
+    <!-- CLIENT LOGO TICKER -->
+    <section id="work" class="py-16 bg-brand-card/30 border-t border-slate-800 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+            <h2 class="text-xs font-bold tracking-widest uppercase text-slate-400 text-center">Trusted By Brands Across Industries</h2>
+        </div>
+        <div class="relative w-full overflow-hidden flex whitespace-nowrap no-scrollbar">
+            <div class="flex animate-marquee gap-8 items-center">
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <span class="text-white font-bold text-base">Apex Apparel</span>
+                    <span class="text-[10px] text-emerald-400 mt-1 uppercase tracking-wider font-semibold">D2C Fashion</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <span class="text-white font-bold text-base">Nova Realty</span>
+                    <span class="text-[10px] text-blue-400 mt-1 uppercase tracking-wider font-semibold">B2B Real Estate</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <span class="text-white font-bold text-base">Zenith Health</span>
+                    <span class="text-[10px] text-purple-400 mt-1 uppercase tracking-wider font-semibold">Service / D2C</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <span class="text-white font-bold text-base">Kraft Steel</span>
+                    <span class="text-[10px] text-amber-400 mt-1 uppercase tracking-wider font-semibold">Manufacturing B2B</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <span class="text-white font-bold text-base">Veloce Fit</span>
+                    <span class="text-[10px] text-emerald-400 mt-1 uppercase tracking-wider font-semibold">E-Commerce Brand</span>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <span class="text-white font-bold text-base">Apex Apparel</span>
+                    <span class="text-[10px] text-emerald-400 mt-1 uppercase tracking-wider font-semibold">D2C Fashion</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <span class="text-white font-bold text-base">Nova Realty</span>
+                    <span class="text-[10px] text-blue-400 mt-1 uppercase tracking-wider font-semibold">B2B Real Estate</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <span class="text-white font-bold text-base">Zenith Health</span>
+                    <span class="text-[10px] text-purple-400 mt-1 uppercase tracking-wider font-semibold">Service / D2C</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <span class="text-white font-bold text-base">Kraft Steel</span>
+                    <span class="text-[10px] text-amber-400 mt-1 uppercase tracking-wider font-semibold">Manufacturing B2B</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <span class="text-white font-bold text-base">Veloce Fit</span>
+                    <span class="text-[10px] text-emerald-400 mt-1 uppercase tracking-wider font-semibold">E-Commerce Brand</span>
+                </div>
             </div>
-            <div class="time-box">
-                <span id="minutes">00</span>
-                <p>Minutes</p>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-24 border-t border-slate-800 bg-brand-card/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-xs font-bold tracking-widest uppercase text-brand-primary mb-3">Got Questions?</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Frequently Asked Questions</h3>
             </div>
-            <div class="time-box">
-                <span id="seconds">00</span>
-                <p>Seconds</p>
+            <div class="space-y-4">
+                <div class="bg-brand-card border border-slate-800 rounded-xl p-6">
+                    <h4 class="font-bold text-white text-base">What is your agency pricing model?</h4>
+                    <p class="text-slate-400 text-sm mt-2">We work on a fixed retainer fee model combined with a performance incentive structure depending on your monthly ad spend tier.</p>
+                </div>
+                <div class="bg-brand-card border border-slate-800 rounded-xl p-6">
+                    <h4 class="font-bold text-white text-base">Do you provide custom ad creatives and video assets?</h4>
+                    <p class="text-slate-400 text-sm mt-2">Yes, through our specialized production wing (Fourstick Studio), we handle complete ad asset creation, UGC frameworks, and custom static edits upon request.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLEAN BOTTOM CTA SECTION -->
+    <section class="py-24 border-t border-slate-800 bg-brand-card/20 text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">Ready to Scale Your Growth?</h3>
+            <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto mb-10">
+                Let's discuss how we can engineer predictable revenue acquisition funnels for your brand.
+            </p>
+            <button onclick="openModal()" class="bg-gradient-to-r from-brand-primary to-brand-accent text-white px-10 py-5 rounded-2xl font-bold text-lg hover:opacity-95 hover:scale-[1.02] transition-all duration-200 shadow-2xl shadow-brand-primary/30 cursor-pointer inline-flex items-center gap-3">
+                Request Custom Strategy Proposal <i data-lucide="arrow-right" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-16 border-t border-slate-800 bg-brand-card/50 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <div>
+                <a href="#" class="text-2xl font-extrabold tracking-tighter text-white flex items-center gap-2 mb-4">
+                    FOUR<span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">STICK</span>
+                </a>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Your dedicated performance marketing and growth partner engineered for scalable, predictable revenue generation.
+                </p>
+            </div>
+            <div>
+                <h5 class="text-white font-bold text-sm mb-4">Quick Navigation</h5>
+                <ul class="space-y-2.5 text-xs">
+                    <li><a href="#services" class="hover:text-white transition">Services</a></li>
+                    <li><a href="#work" class="hover:text-white transition">Portfolio</a></li>
+                    <li><a href="#case-studies" class="hover:text-white transition">Case Studies</a></li>
+                    <li><a href="#faq" class="hover:text-white transition">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold text-sm mb-4">Ecosystem</h5>
+                <ul class="space-y-2.5 text-xs">
+                    <li><a href="https://instagram.com/fourstick.ads" target="_blank" class="hover:text-white transition">Fourstick Ads (IG) ↗</a></li>
+                    <li><a href="https://instagram.com/fourstick.studio" target="_blank" class="text-brand-accent hover:underline">Fourstick Studio (IG) ↗</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold text-sm mb-4">Get In Touch</h5>
+                <ul class="space-y-2.5 text-xs">
+                    <li>Email: <a href="mailto:hello@fourstick.com" class="text-slate-300 hover:text-white">hello@fourstick.com</a></li>
+                    <li>Phone: <a href="tel:+919876543210" class="text-slate-300 hover:text-white">+91 98765 43210</a></li>
+                    <li class="pt-2 text-slate-500">Mumbai, India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+            <div>© 2026 FOURSTICK. All rights reserved.</div>
+            <div class="flex gap-6">
+                <a href="https://instagram.com/fourstick.ads" target="_blank" class="hover:text-slate-300 transition">Fourstick Ads</a>
+                <a href="https://instagram.com/fourstick.studio" target="_blank" class="hover:text-slate-300 transition">Fourstick Studio</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- POPUP MODAL -->
+    <div id="proposal-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 px-4">
+        <div class="bg-white text-slate-900 w-full max-w-5xl rounded-3xl p-8 sm:p-12 relative shadow-2xl transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto no-scrollbar">
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-500 hover:text-slate-900 text-2xl font-bold focus:outline-none cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <!-- Left Column: Title & Info -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                            Send a <br>message.
+                        </h2>
+                        <p class="mt-4 text-slate-600 text-sm">We're here to answer any question you may have.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-8 pt-6 border-t border-slate-200">
+                        <div>
+                            <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">careers</div>
+                            <div class="text-xs text-slate-600 mb-1">Would you like to join our growing team?</div>
+                            <a href="mailto:Hr@fourstick.com" class="text-xs font-bold text-slate-900 hover:underline">Hr@fourstick.com</a>
+                        </div>
+                        <div>
+                            <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Feedbacks</div>
+                            <div class="text-xs text-slate-600 mb-1">Have a project in mind?</div>
+                            <a href="mailto:Hi@fourstick.com" class="text-xs font-bold text-slate-900 hover:underline">Hi@fourstick.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form Fields -->
+                <div>
+                    <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.'); closeModal();" class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Your name?</label>
+                            <input type="text" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="Vikash Mistri">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Your Email address?</label>
+                            <input type="email" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="hello@fourstick.com">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-500 mb-1">Your Phone Number?</label>
+                                <input type="tel" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="+91 98765 43210">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-500 mb-1">What's your budget?</label>
+                                <input type="text" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="e.g. ₹2,00,000">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Your Website?</label>
+                            <input type="text" class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="https://yourbrand.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Tell us about your project</label>
+                            <input type="text" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="Brief details about your brand goals...">
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-500 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-indigo-600 transition-all duration-200 mt-6 cursor-pointer tracking-wider text-xs uppercase">
+                            SEND MESSAGE
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- Interactive Scripts -->
     <script>
-        // Monsoon Rain Generator
-        for (let i = 0; i < 100; i++) {
-            let drop = document.createElement('div');
-            drop.classList.add('raindrop');
-            drop.style.left = Math.random() * window.innerWidth + 'px';
-            drop.style.top = Math.random() * -100 + 'px';
-            drop.style.animationDuration = (0.5 + Math.random() * 0.5) + 's';
-            drop.style.animationDelay = Math.random() * 5 + 's';
-            document.body.appendChild(drop);
+        lucide.createIcons();
+        
+        // Mobile Menu Toggle
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Modal Toggle Functions
+        const modal = document.getElementById('proposal-modal');
+        const modalContent = modal.querySelector('div > div');
+
+        function openModal() {
+            modal.classList.remove('pointer-events-none', 'opacity-0');
+            modal.classList.add('opacity-100');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+            document.body.style.overflow = 'hidden';
         }
 
-        // 7 Days Countdown Timer Logic
-        // Set the date we're counting down to (7 days from now)
-        let countDownDate = new Date().getTime() + (7 * 24 * 60 * 60 * 1000);
+        function closeModal() {
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('pointer-events-none');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
 
-        let x = setInterval(function() {
-            let now = new Date().getTime();
-            let distance = countDownDate - now;
-
-            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
-            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
-            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
-
-            if (distance < 0) {
-                clearInterval(x);
-                document.querySelector(".coming-soon").innerHTML = "We Are Live!";
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
             }
-        }, 1000);
+        });
     </script>
-
 </body>
 </html>
