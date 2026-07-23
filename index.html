@@ -498,6 +498,10 @@
                 <!-- Right Column: Form Fields with Formspree Endpoint & Anti-Spam Honeypot -->
                 <div>
                     <form action="https://formspree.io/f/xkodqjyw" method="POST" class="space-y-4">
+
+                        <!-- Redirect to Thank You Page after submission -->
+
+                        <input type="hidden" name="_next" value="thankyou.html">
                         
                         <!-- Invisible Honeypot Field to block automated bots without annoying real users -->
                         <input type="text" name="_gotcha" class="hidden-honey" tabindex="-1" autocomplete="off">
