@@ -1240,45 +1240,58 @@
     </section>
 
     <!-- FAQ SECTION -->
-    <section id="faq" class="py-24 border-t border-slate-800 bg-brand-card/30">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-xs font-bold tracking-widest uppercase text-brand-primary mb-3">Got Questions?</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Frequently Asked Questions</h3>
-            </div>
-            <div class="space-y-4">
-                <div class="bg-brand-card border border-slate-800 rounded-xl p-6">
-                    <h4 class="font-bold text-white text-base">What is your agency pricing model?</h4>
-                    <p class="text-slate-400 text-sm mt-2">We work on a fixed retainer fee model combined with a performance incentive structure depending on your monthly ad spend tier.</p>
-                </div>
-                <div class="bg-brand-card border border-slate-800 rounded-xl p-6">
-                    <h4 class="font-bold text-white text-base">Do you provide custom ad creatives and video assets?</h4>
-                    <p class="text-slate-400 text-sm mt-2">Yes, through our specialized production wing (Fourstick Studio), we handle complete ad asset creation, UGC frameworks, and custom static edits upon request.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="faq" class="py-24 border-t border-slate-800 bg-brand-card/30">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- FAQ SECTION -->
-    <section id="faq" class="py-24 border-t border-slate-800 bg-brand-card/30">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-xs font-bold tracking-widest uppercase text-brand-primary mb-3">Got Questions?</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Frequently Asked Questions</h3>
-            </div>
-            <div class="space-y-4">
-                <div class="bg-brand-card border border-slate-800 rounded-xl p-6">
-                    <h4 class="font-bold text-white text-base">What is your agency pricing model?</h4>
-                    <p class="text-slate-400 text-sm mt-2">We work on a fixed retainer fee model combined with a performance incentive structure depending on your monthly ad spend tier.</p>
-                </div>
-                <div class="bg-brand-card border border-slate-800 rounded-xl p-6">
-                    <h4 class="font-bold text-white text-base">Do you provide custom ad creatives and video assets?</h4>
-                    <p class="text-slate-400 text-sm mt-2">Yes, through our specialized production wing (Fourstick Studio), we handle complete ad asset creation, UGC frameworks, and custom static edits upon request.</p>
-                </div>
-                
-            </div>
+        <div class="text-center mb-16">
+            <h2 class="text-xs font-bold tracking-widest uppercase text-brand-primary mb-3">
+                Got Questions?
+            </h2>
+            <h3 class="text-3xl sm:text-4xl font-extrabold text-white">
+                Frequently Asked Questions
+            </h3>
         </div>
-    </section>
+
+
+        <div class="space-y-4">
+
+            <!-- FAQ 1 -->
+            <div class="bg-brand-card border border-slate-800 rounded-xl">
+                <button class="faq-question w-full flex justify-between items-center p-6 text-left">
+                    <span class="font-bold text-white text-base">
+                        What services does your performance marketing agency provide?
+                    </span>
+                    <span class="faq-icon text-brand-primary text-sm">▼</span>
+                </button>
+
+                <div class="faq-answer hidden px-6 pb-6">
+                    <p class="text-slate-400 text-sm">
+                        We help businesses grow through Meta Ads, Google Ads, paid media strategy, ad creative production, conversion optimization, tracking setup, and data-driven campaign management.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- FAQ 2 -->
+            <div class="bg-brand-card border border-slate-800 rounded-xl">
+                <button class="faq-question w-full flex justify-between items-center p-6 text-left">
+                    <span class="font-bold text-white text-base">
+                        Do you provide custom ad creatives and video assets?
+                    </span>
+                    <span class="faq-icon text-brand-primary text-sm">▼</span>
+
+                <div class="faq-answer hidden px-6 pb-6">
+                    <p class="text-slate-400 text-sm">
+                        Yes, we create performance-focused static ads, video ads, UGC-style creatives, and creative testing strategies designed to improve conversions.
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</section>
 
     <!-- CLEAN BOTTOM CTA SECTION -->
     <section class="py-24 border-t border-slate-800 bg-brand-card/20 text-center">
@@ -1460,5 +1473,27 @@
             }
         });
     </script>
+    
+   document.querySelectorAll(".faq-question").forEach((question) => {
+
+    question.addEventListener("click", () => {
+
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector(".faq-icon");
+
+        // toggle answer
+        answer.classList.toggle("hidden");
+
+        // arrow change
+        if(answer.classList.contains("hidden")){
+            icon.textContent = "▼";
+        } else {
+            icon.textContent = "▲";
+        }
+
+    });
+
+});
+    
 </body>
 </html>
