@@ -60,13 +60,579 @@
         
         /* Hidden Honeypot Field for Spams */
         .hidden-honey { display: none !important; }
+
+        /* INDUSTRIES SECTION */
+        .industries {
+            padding: 60px 20px;
+            border-top: 1px solid #1e293b;
+            background: linear-gradient(135deg, #050507 0%, #0f0f14 100%);
+        }
+
+        .industries-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .industries-header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .industries-header h2 {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #6366f1;
+            margin-bottom: 12px;
+        }
+
+        .industries-header h3 {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #fff, #cbd5e1);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .industries-header p {
+            color: #94a3b8;
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .industry-card {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 32px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+            animation: slideUpStagger 0.6s ease-out backwards;
+        }
+
+        .industry-card:nth-child(1) { animation-delay: 0.1s; }
+        .industry-card:nth-child(2) { animation-delay: 0.2s; }
+        .industry-card:nth-child(3) { animation-delay: 0.3s; }
+        .industry-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .industry-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .industry-card:hover::before {
+            top: -25%;
+            left: -25%;
+            opacity: 1;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-color: #6366f1;
+            background: rgba(99, 102, 241, 0.05);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
+        }
+
+        .industry-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(99, 102, 241, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .industry-card:hover .industry-icon {
+            background: rgba(99, 102, 241, 0.2);
+            transform: rotate(12deg) scale(1.1);
+        }
+
+        .industry-icon svg {
+            width: 28px;
+            height: 28px;
+            color: #6366f1;
+        }
+
+        .industry-card h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: white;
+        }
+
+        .industry-card p {
+            color: #cbd5e1;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .industry-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .industry-tag {
+            font-size: 12px;
+            background: #1e293b;
+            color: #94a3b8;
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
+        }
+
+        .industry-card:hover .industry-tag {
+            background: #6366f1;
+            border-color: #6366f1;
+            color: #fff;
+        }
+
+        /* FRAMEWORK SECTION */
+        .framework {
+            padding: 60px 20px;
+            background: rgba(30, 41, 59, 0.3);
+            border-top: 1px solid #334155;
+        }
+
+        .framework-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .framework-header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .framework-header h2 {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #a855f7;
+            margin-bottom: 12px;
+        }
+
+        .framework-header h3 {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #fff, #cbd5e1);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+            position: relative;
+        }
+
+        @media (min-width: 1024px) {
+            .framework-grid::before {
+                content: '';
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: linear-gradient(90deg, transparent, #6366f1, transparent);
+                z-index: 0;
+            }
+        }
+
+        .step-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
+            border: 1px solid #6366f1;
+            border-radius: 16px;
+            padding: 32px;
+            position: relative;
+            z-index: 1;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: fadeInScale 0.7s ease-out backwards;
+        }
+
+        .step-card:nth-child(1) { animation-delay: 0.2s; }
+        .step-card:nth-child(2) { animation-delay: 0.3s; }
+        .step-card:nth-child(3) { animation-delay: 0.4s; }
+        .step-card:nth-child(4) { animation-delay: 0.5s; }
+
+        .step-card:hover {
+            transform: translateY(-16px);
+            border-color: #a855f7;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
+            box-shadow: 0 25px 50px rgba(99, 102, 241, 0.15);
+        }
+
+        .step-number {
+            font-size: 32px;
+            font-weight: 900;
+            color: #6366f1;
+            margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 4px;
+        }
+
+        .step-card:hover .step-number {
+            animation: pulse 0.6s ease-out;
+            color: #a855f7;
+        }
+
+        .step-card h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .step-card p {
+            color: #cbd5e1;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .step-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .step-tag {
+            font-size: 11px;
+            background: rgba(99, 102, 241, 0.1);
+            color: #a4d6ff;
+            padding: 5px 11px;
+            border-radius: 16px;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover .step-tag {
+            background: #a855f7;
+            color: #fff;
+            border-color: #a855f7;
+        }
+
+        /* GROWTH STACK SECTION */
+        .growth-stack {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #050507 0%, #0f0f14 100%);
+            border-top: 1px solid #1e293b;
+        }
+
+        .stack-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .stack-header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .stack-header h2 {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a855f7;
+            margin-bottom: 12px;
+        }
+
+        .stack-header h3 {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #fff, #cbd5e1);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stack-header p {
+            color: #94a3b8;
+            font-size: 15px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+            perspective: 1000px;
+        }
+
+        .stack-card-wrapper {
+            perspective: 1000px;
+            animation: fadeInRotate 0.8s ease-out backwards;
+        }
+
+        .stack-card-wrapper:nth-child(1) { animation-delay: 0.1s; }
+        .stack-card-wrapper:nth-child(2) { animation-delay: 0.2s; }
+        .stack-card-wrapper:nth-child(3) { animation-delay: 0.3s; }
+        .stack-card-wrapper:nth-child(4) { animation-delay: 0.4s; }
+        .stack-card-wrapper:nth-child(5) { animation-delay: 0.5s; }
+        .stack-card-wrapper:nth-child(6) { animation-delay: 0.6s; }
+
+        .stack-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 32px;
+            height: 100%;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .stack-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .stack-card-wrapper:hover .stack-card {
+            transform: translateY(-20px) rotateX(5deg) rotateY(-5deg);
+            border-color: #a855f7;
+            background: rgba(30, 41, 59, 0.8);
+            box-shadow: 0 30px 60px rgba(99, 102, 241, 0.2);
+        }
+
+        .stack-card-wrapper:hover .stack-card::after {
+            opacity: 1;
+        }
+
+        .stack-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .stack-card-wrapper:hover .stack-icon {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2));
+            transform: scale(1.15) rotate(-12deg);
+            border-color: #a855f7;
+        }
+
+        .stack-icon svg {
+            width: 32px;
+            height: 32px;
+            color: #a855f7;
+            transition: all 0.4s ease;
+        }
+
+        .stack-card-wrapper:hover .stack-icon svg {
+            filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.5));
+        }
+
+        .stack-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .stack-card p {
+            color: #cbd5e1;
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .stack-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .stack-tool {
+            font-size: 11px;
+            background: rgba(99, 102, 241, 0.08);
+            color: #a4d6ff;
+            padding: 5px 11px;
+            border-radius: 16px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .stack-card-wrapper:hover .stack-tool {
+            background: #6366f1;
+            color: #fff;
+            border-color: #6366f1;
+            transform: translateY(-2px);
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUpStagger {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes fadeInRotate {
+            from {
+                opacity: 0;
+                transform: rotateX(-20deg) rotateY(20deg) translateZ(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: rotateX(0) rotateY(0) translateZ(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .industries, .framework, .growth-stack {
+                padding: 40px 16px;
+            }
+
+            .industries-header, .framework-header, .stack-header {
+                margin-bottom: 40px;
+            }
+
+            .industry-card, .step-card, .stack-card {
+                padding: 24px;
+            }
+
+            .industries-grid {
+                gap: 16px;
+            }
+
+            .framework-grid {
+                gap: 20px;
+            }
+
+            .stack-grid {
+                gap: 20px;
+                grid-template-columns: 1fr;
+            }
+
+            .industry-card:hover {
+                transform: translateY(-8px) scale(1.01);
+            }
+
+            .step-card:hover {
+                transform: translateY(-12px);
+            }
+
+            .stack-card-wrapper:hover .stack-card {
+                transform: translateY(-12px) rotateX(0deg) rotateY(0deg);
+            }
+
+            @media (min-width: 640px) {
+                .stack-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        }
+
+        @media (max-width: 480px) {
+            .step-number {
+                font-size: 24px;
+            }
+
+            .industry-card, .step-card, .stack-card {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body class="bg-brand-bg text-slate-100 antialiased selection:bg-brand-primary selection:text-white relative">
 
     <!-- LIGHTWEIGHT PREMIUM BACKGROUND GLOWS -->
-    <div class="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none animate-float"></div>
-    <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[140px] pointer-events-none animate-float-delayed"></div>
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none animate-float" style="background: rgba(99, 102, 241, 0.1);"></div>
+    <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[140px] pointer-events-none animate-float-delayed" style="background: rgba(168, 85, 247, 0.1);"></div>
 
     <!-- HEADER / NAVIGATION -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-brand-bg/85 backdrop-blur-xl border-b border-slate-800/80">
@@ -79,7 +645,6 @@
                 <a href="#work" class="hover:text-brand-primary transition">Portfolio</a>
                 <a href="#case-studies" class="hover:text-brand-primary transition">Case Studies</a>
                 <a href="#faq" class="hover:text-brand-primary transition">FAQ</a>
-                <!-- Ecosystem Dropdown linking to Instagram Pages -->
                 <div class="relative group py-2">
                     <button class="flex items-center gap-1.5 text-slate-300 hover:text-white transition font-medium cursor-pointer">
                         <span>Ecosystem</span>
@@ -102,7 +667,6 @@
                     Get Proposal
                 </button>
             </div>
-            <!-- Mobile Menu Toggle -->
             <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none cursor-pointer">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
@@ -163,79 +727,230 @@
         </div>
     </section>
 
-    <!-- SERVICES / STRATEGY BLUEPRINT SECTION -->
-    <section id="services" class="py-20 bg-brand-card/50 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-bold tracking-widest uppercase text-brand-primary mb-3">How We Execute</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Our 4-Step Growth & Strategy Blueprint</h3>
-                <p class="text-slate-400 text-sm mt-3">A systematic approach to analyze, build, test, and relentlessly scale your acquisition pipeline.</p>
+    <!-- SECTION 1: INDUSTRIES -->
+    <section class="industries" id="services">
+        <div class="industries-container">
+            <div class="industries-header">
+                <h2>Who We Help</h2>
+                <h3>Industries We Scale</h3>
+                <p>We build profitable acquisition systems for fast-growing brands across multiple industries.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="bg-brand-card border border-slate-800 p-6 rounded-2xl hover:border-brand-primary/50 transition group">
-                    <div class="text-brand-primary font-mono text-xl font-bold mb-4">01</div>
-                    <h4 class="text-lg font-bold text-white mb-2">Deep Audit & Research</h4>
-                    <p class="text-slate-400 text-xs leading-relaxed">
-                        We analyze historical ad accounts, competitor positioning, and audience leakage points to find hidden revenue opportunities.
-                    </p>
+
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg data-lucide="shopping-bag"></svg>
+                    </div>
+                    <h4>D2C & Ecommerce</h4>
+                    <p>Scale online stores with performance ads, creative testing and conversion-focused funnels.</p>
+                    <div class="industry-tags">
+                        <span class="industry-tag">Meta Ads</span>
+                        <span class="industry-tag">Google Ads</span>
+                        <span class="industry-tag">Shopify</span>
+                    </div>
                 </div>
-                <div class="bg-brand-card border border-slate-800 p-6 rounded-2xl hover:border-brand-primary/50 transition group">
-                    <div class="text-brand-primary font-mono text-xl font-bold mb-4">02</div>
-                    <h4 class="text-lg font-bold text-white mb-2">Funnel Architecture</h4>
-                    <p class="text-slate-400 text-xs leading-relaxed">
-                        Designing high-converting landing pages and structured conversion journeys tailored specifically for your buyer persona.
-                    </p>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg data-lucide="briefcase-business"></svg>
+                    </div>
+                    <h4>B2B Lead Generation</h4>
+                    <p>Generate qualified business leads through Google, LinkedIn and Meta campaigns.</p>
+                    <div class="industry-tags">
+                        <span class="industry-tag">Google Search</span>
+                        <span class="industry-tag">LinkedIn</span>
+                        <span class="industry-tag">CRM</span>
+                    </div>
                 </div>
-                <div class="bg-brand-card border border-slate-800 p-6 rounded-2xl hover:border-brand-primary/50 transition group">
-                    <div class="text-brand-primary font-mono text-xl font-bold mb-4">03</div>
-                    <h4 class="text-lg font-bold text-white mb-2">Ad Creative Production</h4>
-                    <p class="text-slate-400 text-xs leading-relaxed">
-                        Crafting high-performing thumb-stopping video edits, UGC frameworks, and statics custom-tailored for maximum CTR.
-                    </p>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg data-lucide="monitor-smartphone"></svg>
+                    </div>
+                    <h4>SaaS & Tech</h4>
+                    <p>Increase demo bookings, free trials and product adoption with scalable paid acquisition.</p>
+                    <div class="industry-tags">
+                        <span class="industry-tag">Demo Leads</span>
+                        <span class="industry-tag">Trials</span>
+                        <span class="industry-tag">Scaling</span>
+                    </div>
                 </div>
-                <div class="bg-brand-card border border-slate-800 p-6 rounded-2xl hover:border-brand-primary/50 transition group">
-                    <div class="text-brand-primary font-mono text-xl font-bold mb-4">04</div>
-                    <h4 class="text-lg font-bold text-white mb-2">Media Buying & Scaling</h4>
-                    <p class="text-slate-400 text-xs leading-relaxed">
-                        Deploying rigorous testing frameworks across Meta and Google platforms while maintaining target acquisition costs.
-                    </p>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg data-lucide="building-2"></svg>
+                    </div>
+                    <h4>Service Businesses</h4>
+                    <p>Drive consistent inquiries for local and high-ticket service-based businesses.</p>
+                    <div class="industry-tags">
+                        <span class="industry-tag">Lead Gen</span>
+                        <span class="industry-tag">Funnels</span>
+                        <span class="industry-tag">Automation</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ACTIVE PLATFORMS & AUTOMATION SECTION -->
-    <section class="py-20 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-bold tracking-widest uppercase text-brand-accent mb-3">Ecosystem & Stack</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Active Working Platforms & Automation</h3>
-                <p class="text-slate-400 text-sm mt-4">We integrate deeply with modern growth infrastructure to maximize lead conversion and retention.</p>
+    <!-- SECTION 2: FRAMEWORK -->
+    <section class="framework">
+        <div class="framework-container">
+            <div class="framework-header">
+                <h2>How We Execute</h2>
+                <h3>Our Proven Growth Framework</h3>
+                <p>Every campaign follows a structured system designed to maximize performance, reduce wasted spend and scale profitable growth.</p>
             </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-                <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
-                    <div class="text-white font-bold text-base mb-1">Google Ads / Meta Ads</div>
-                    <div class="text-xs text-slate-400">PMax, Search & Advantage+</div>
+
+            <div class="framework-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h4>Strategy & Research</h4>
+                    <p>Before spending a single rupee, we identify audience insights, competitor gaps and the best growth opportunities.</p>
+                    <div class="step-tags">
+                        <span class="step-tag">Audience</span>
+                        <span class="step-tag">Competitors</span>
+                        <span class="step-tag">Offer</span>
+                        <span class="step-tag">Tracking</span>
+                    </div>
                 </div>
-                <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
-                    <div class="text-white font-bold text-base mb-1">Lead Generation / D2C</div>
-                    <div class="text-xs text-slate-400">High-Growth Funnels & Stores</div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h4>Creative Production</h4>
+                    <p>We produce thumb-stopping creatives built to capture attention, improve CTR and increase conversions.</p>
+                    <div class="step-tags">
+                        <span class="step-tag">Video Ads</span>
+                        <span class="step-tag">UGC</span>
+                        <span class="step-tag">Static Ads</span>
+                        <span class="step-tag">Copywriting</span>
+                    </div>
                 </div>
-                <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
-                    <div class="text-white font-bold text-base mb-1">CRM / Automation</div>
-                    <div class="text-xs text-slate-400">HubSpot & Lead Pipelines</div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h4>Launch & Optimization</h4>
+                    <p>We launch campaigns across Meta & Google while continuously testing audiences, creatives and landing pages.</p>
+                    <div class="step-tags">
+                        <span class="step-tag">Meta Ads</span>
+                        <span class="step-tag">Google Ads</span>
+                        <span class="step-tag">A/B Testing</span>
+                        <span class="step-tag">CRO</span>
+                    </div>
                 </div>
-                <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
-                    <div class="text-white font-bold text-base mb-1">Whatsapp Automation</div>
-                    <div class="text-xs text-slate-400">Automated Retargeting</div>
+
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <h4>Scale & Growth</h4>
+                    <p>Once campaigns become profitable, we scale budgets strategically while maintaining efficiency and predictable growth.</p>
+                    <div class="step-tags">
+                        <span class="step-tag">Scaling</span>
+                        <span class="step-tag">ROAS</span>
+                        <span class="step-tag">Reporting</span>
+                        <span class="step-tag">Automation</span>
+                    </div>
                 </div>
-                <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
-                    <div class="text-white font-bold text-base mb-1">AI Automation</div>
-                    <div class="text-xs text-slate-400">Smart Workflows</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: GROWTH STACK -->
+    <section class="growth-stack">
+        <div class="stack-container">
+            <div class="stack-header">
+                <h2>Growth Stack</h2>
+                <h3>The Technology Behind Every Campaign</h3>
+                <p>We combine industry-leading advertising, analytics, automation and creative tools to build scalable growth systems for modern brands.</p>
+            </div>
+
+            <div class="stack-grid">
+                <div class="stack-card-wrapper">
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <svg data-lucide="megaphone"></svg>
+                        </div>
+                        <h4>Paid Media</h4>
+                        <p>High-performance acquisition campaigns across today's most powerful advertising platforms.</p>
+                        <div class="stack-tools">
+                            <span class="stack-tool">Meta Ads</span>
+                            <span class="stack-tool">Google Ads</span>
+                            <span class="stack-tool">LinkedIn</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-brand-card border border-slate-800 rounded-xl p-6 text-center hover:border-brand-primary transition">
-                    <div class="text-white font-bold text-base mb-1">Creative Studio</div>
-                    <div class="text-xs text-brand-accent font-semibold">High-Impact Ad Assets</div>
+
+                <div class="stack-card-wrapper">
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <svg data-lucide="bar-chart-3"></svg>
+                        </div>
+                        <h4>Analytics</h4>
+                        <p>Measure every click, conversion and customer journey with advanced analytics.</p>
+                        <div class="stack-tools">
+                            <span class="stack-tool">GA4</span>
+                            <span class="stack-tool">GTM</span>
+                            <span class="stack-tool">Looker Studio</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-card-wrapper">
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <svg data-lucide="clapperboard"></svg>
+                        </div>
+                        <h4>Creative Studio</h4>
+                        <p>Scroll-stopping creatives engineered to increase CTR and conversion rates.</p>
+                        <div class="stack-tools">
+                            <span class="stack-tool">Video Ads</span>
+                            <span class="stack-tool">UGC</span>
+                            <span class="stack-tool">Static Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-card-wrapper">
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <svg data-lucide="mouse-pointer-click"></svg>
+                        </div>
+                        <h4>Conversion Optimization</h4>
+                        <p>Turn more visitors into paying customers through testing and funnel optimization.</p>
+                        <div class="stack-tools">
+                            <span class="stack-tool">Landing Pages</span>
+                            <span class="stack-tool">Funnels</span>
+                            <span class="stack-tool">A/B Testing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-card-wrapper">
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <svg data-lucide="workflow"></svg>
+                        </div>
+                        <h4>Automation</h4>
+                        <p>Automated lead nurturing, CRM workflows and intelligent follow-up systems.</p>
+                        <div class="stack-tools">
+                            <span class="stack-tool">HubSpot</span>
+                            <span class="stack-tool">WhatsApp</span>
+                            <span class="stack-tool">n8n</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-card-wrapper">
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <svg data-lucide="sparkles"></svg>
+                        </div>
+                        <h4>AI Systems</h4>
+                        <p>AI-powered workflows that improve creative production, reporting and campaign execution.</p>
+                        <div class="stack-tools">
+                            <span class="stack-tool">OpenAI</span>
+                            <span class="stack-tool">Claude</span>
+                            <span class="stack-tool">AI Agents</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -269,7 +984,7 @@
                         </div>
                         <div>
                             <div class="text-xs text-slate-400">ROAS</div>
-                            <div class="text-base font-bold text-emerald-400">6.8x</div>
+                            <div class="text-base font-bold text-white">6.8x</div>
                         </div>
                         <div>
                             <div class="text-xs text-slate-400">Revenue</div>
@@ -294,7 +1009,7 @@
                         </div>
                         <div>
                             <div class="text-xs text-slate-400">Cost / Lead</div>
-                            <div class="text-base font-bold text-emerald-400">₹340</div>
+                            <div class="text-base font-bold text-white">₹340</div>
                         </div>
                         <div>
                             <div class="text-xs text-slate-400">Closed Sales</div>
@@ -306,7 +1021,7 @@
                 <div class="w-[350px] sm:w-[450px] bg-brand-card border border-slate-800 rounded-2xl p-8 flex flex-col justify-between shrink-0 hover:border-brand-primary/50 transition">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-semibold rounded-full">B2B SaaS</span>
+                            <span class="px-3 py-1 bg-brand-primary/10 text-brand-primary text-xs font-semibold rounded-full">B2B SaaS</span>
                             <span class="text-xs text-slate-400">LinkedIn & Google Search</span>
                         </div>
                         <h4 class="text-xl font-bold text-white mb-2">Enterprise Demo Pipeline Growth for B2B Tech</h4>
@@ -319,7 +1034,7 @@
                         </div>
                         <div>
                             <div class="text-xs text-slate-400">Demo CPL</div>
-                            <div class="text-base font-bold text-emerald-400">₹1,250</div>
+                            <div class="text-base font-bold text-white">₹1,250</div>
                         </div>
                         <div>
                             <div class="text-xs text-slate-400">Pipeline</div>
@@ -340,44 +1055,44 @@
             <div class="flex animate-marquee gap-8 items-center">
                 <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
                     <span class="text-white font-bold text-base">Apex Apparel</span>
-                    <span class="text-[10px] text-emerald-400 mt-1 uppercase tracking-wider font-semibold">D2C Fashion</span>
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">D2C Fashion</span>
                 </div>
                 <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
                     <span class="text-white font-bold text-base">Nova Realty</span>
-                    <span class="text-[10px] text-blue-400 mt-1 uppercase tracking-wider font-semibold">B2B Real Estate</span>
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">B2B Real Estate</span>
                 </div>
                 <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
                     <span class="text-white font-bold text-base">Zenith Health</span>
-                    <span class="text-[10px] text-purple-400 mt-1 uppercase tracking-wider font-semibold">Service / D2C</span>
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">Service / D2C</span>
                 </div>
                 <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
                     <span class="text-white font-bold text-base">Kraft Steel</span>
-                    <span class="text-[10px] text-amber-400 mt-1 uppercase tracking-wider font-semibold">Manufacturing B2B</span>
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">Manufacturing B2B</span>
                 </div>
                 <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
                     <span class="text-white font-bold text-base">Veloce Fit</span>
-                    <span class="text-[10px] text-emerald-400 mt-1 uppercase tracking-wider font-semibold">E-Commerce Brand</span>
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">E-Commerce Brand</span>
                 </div>
                 <!-- Duplicate for seamless loop -->
                 <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
                     <span class="text-white font-bold text-base">Apex Apparel</span>
-                    <span class="text-[10px] text-emerald-400 mt-1 uppercase tracking-wider font-semibold">D2C Fashion</span>
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">D2C Fashion</span>
                 </div>
                 <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
                     <span class="text-white font-bold text-base">Nova Realty</span>
-                    <span class="text-[10px] text-blue-400 mt-1 uppercase tracking-wider font-semibold">B2B Real Estate</span>
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">B2B Real Estate</span>
                 </div>
                 <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
                     <span class="text-white font-bold text-base">Zenith Health</span>
-                    <span class="text-[10px] text-purple-400 mt-1 uppercase tracking-wider font-semibold">Service / D2C</span>
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">Service / D2C</span>
                 </div>
                 <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
                     <span class="text-white font-bold text-base">Kraft Steel</span>
-                    <span class="text-[10px] text-amber-400 mt-1 uppercase tracking-wider font-semibold">Manufacturing B2B</span>
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">Manufacturing B2B</span>
                 </div>
                 <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
                     <span class="text-white font-bold text-base">Veloce Fit</span>
-                    <span class="text-[10px] text-emerald-400 mt-1 uppercase tracking-wider font-semibold">E-Commerce Brand</span>
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">E-Commerce Brand</span>
                 </div>
             </div>
         </div>
@@ -461,7 +1176,7 @@
         </div>
     </footer>
 
-    <!-- POPUP MODAL (Formspree + Built-in Anti-Spam Honeypot) -->
+    <!-- POPUP MODAL -->
     <div id="proposal-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 p-4 overflow-y-auto">
         <div class="bg-white text-slate-900 w-full max-w-4xl rounded-3xl p-6 sm:p-10 relative shadow-2xl transform scale-95 transition-transform duration-300 my-auto max-h-[90vh] overflow-y-auto no-scrollbar">
             <!-- Close Button -->
@@ -470,7 +1185,7 @@
             </button>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                <!-- Left Column: Title & Info -->
+                <!-- Left Column -->
                 <div class="space-y-6">
                     <div>
                         <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
@@ -483,27 +1198,20 @@
                         <div>
                             <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">careers</div>
                             <div class="text-xs text-slate-600 mb-1">Would you like to join our growing team?</div>
-                            <a href="mailto:Hr@fourstick.com" class="text-xs font-bold text-slate-900 hover:underline">fourstick09@gmail.com
-</a>
+                            <a href="mailto:Hr@fourstick.com" class="text-xs font-bold text-slate-900 hover:underline">fourstick09@gmail.com</a>
                         </div>
                         <div>
                             <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Feedbacks</div>
                             <div class="text-xs text-slate-600 mb-1">Have a project in mind?</div>
-                            <a href="mailto:Hi@fourstick.com" class="text-xs font-bold text-slate-900 hover:underline">fourstick09@gmail.com
-</a>
+                            <a href="mailto:Hi@fourstick.com" class="text-xs font-bold text-slate-900 hover:underline">fourstick09@gmail.com</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Column: Form Fields with Formspree Endpoint & Anti-Spam Honeypot -->
+                <!-- Right Column: Form -->
                 <div>
                     <form action="https://formspree.io/f/xkodqjyw" method="POST" class="space-y-4">
-
-                        <!-- Redirect to Thank You Page after submission -->
-
                         <input type="hidden" name="_next" value="thankyou.html">
-                        
-                        <!-- Invisible Honeypot Field to block automated bots without annoying real users -->
                         <input type="text" name="_gotcha" class="hidden-honey" tabindex="-1" autocomplete="off">
 
                         <div>
