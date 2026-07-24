@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOURSTICK | Performance Marketing & Growth Partner</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#6366f1',
+                            accent: '#a855f7',
+                            card: '#0f0f14',
+                            bg: '#050507'
+                        }
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '50%': { transform: 'translate(30px, -20px) scale(1.05)' }
+                        }
+                    },
+                    animation: {
+                        marquee: 'marquee 25s linear infinite',
+                        float: 'float 12s ease-in-out infinite',
+                        'float-delayed': 'float 15s ease-in-out 4s infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-brand-bg text-slate-100 antialiased selection:bg-brand-primary selection:text-white relative">
+
+    <!-- LIGHTWEIGHT PREMIUM BACKGROUND GLOWS -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none animate-float" style="background: rgba(99, 102, 241, 0.1);"></div>
+    <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[140px] pointer-events-none animate-float-delayed" style="background: rgba(168, 85, 247, 0.1);"></div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-bg/85 backdrop-blur-xl border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-extrabold tracking-tighter text-white flex items-center gap-2">
+                FOUR<span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">STICK</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                <a href="#services" class="hover:text-brand-primary transition">Services</a>
+                <a href="#work" class="hover:text-brand-primary transition">Portfolio</a>
+                <a href="#case-studies" class="hover:text-brand-primary transition">Case Studies</a>
+                <a href="#faq" class="hover:text-brand-primary transition">FAQ</a>
+                <div class="relative group py-2">
+                    <button class="flex items-center gap-1.5 text-slate-300 hover:text-white transition font-medium cursor-pointer">
+                        <span>Ecosystem</span>
+                        <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400"></i>
+                    </button>
+                    <div class="absolute top-full left-0 w-52 bg-brand-card border border-slate-800 rounded-xl shadow-2xl py-2 hidden group-hover:block transition-all">
+                        <a href="https://instagram.com/fourstick.ads" target="_blank" class="block px-4 py-2.5 hover:bg-slate-800/60 transition">
+                            <div class="text-xs font-bold text-white flex items-center justify-between">Fourstick Ads <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i></div>
+                            <div class="text-[10px] text-slate-400">Performance & Media Buying</div>
+                        </a>
+                        <a href="https://instagram.com/fourstick.studio" target="_blank" class="block px-4 py-2.5 hover:bg-slate-800/60 transition border-t border-slate-800/60">
+                            <div class="text-xs font-bold text-brand-accent flex items-center justify-between">Fourstick Studio <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i></div>
+                            <div class="text-[10px] text-slate-400">Creative Production & Assets</div>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <div class="hidden md:flex items-center gap-4">
+                <button onclick="openModal()" class="bg-gradient-to-r from-brand-primary to-brand-accent text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 hover:scale-[1.02] transition-all duration-200 shadow-lg shadow-brand-primary/20 cursor-pointer">
+                    Get Proposal
+                </button>
+            </div>
+            <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none cursor-pointer">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-slate-800 px-6 py-4 space-y-3">
+            <a href="#services" class="block text-slate-300 hover:text-white py-1.5">Services</a>
+            <a href="#work" class="block text-slate-300 hover:text-white py-1.5">Portfolio</a>
+            <a href="#case-studies" class="block text-slate-300 hover:text-white py-1.5">Case Studies</a>
+            <a href="#faq" class="block text-slate-300 hover:text-white py-1.5">FAQ</a>
+            <div class="py-2 border-t border-slate-800 space-y-2">
+                <a href="https://instagram.com/fourstick.ads" target="_blank" class="block text-xs font-bold text-white">Instagram: Fourstick Ads ↗</a>
+                <a href="https://instagram.com/fourstick.studio" target="_blank" class="block text-xs font-bold text-brand-accent">Instagram: Fourstick Studio ↗</a>
+            </div>
+            <button onclick="openModal()" class="w-full text-center bg-gradient-to-r from-brand-primary to-brand-accent text-white py-2.5 rounded-full font-semibold text-sm">Get Proposal</button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-brand-accent text-xs font-semibold mb-6">
+                <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span> Performance Marketing + High-Impact Creatives
+            </div>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
+                We Scale Brands Through <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">Data & Creatives</span>
+            </h1>
+            <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto">
+                Stop wasting ad spend. We engineer high-converting Meta & Google Ads funnels backed by custom pattern-interrupt creatives built to drive predictable revenue.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="openModal()" class="bg-gradient-to-r from-brand-primary to-brand-accent text-white px-8 py-4 rounded-xl font-bold text-base hover:opacity-90 hover:scale-[1.02] transition-all duration-200 shadow-xl shadow-brand-primary/25 flex items-center justify-center gap-2 cursor-pointer">
+                    Get Your Free Audit <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+                <a href="#work" class="bg-slate-900 border border-slate-800 text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-slate-800 hover:scale-[1.02] transition-all duration-200 flex items-center justify-center">
+                    Explore Portfolio
+                </a>
+            </div>
+            <!-- Trust Stats -->
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-slate-800/80 max-w-5xl mx-auto">
+                <div>
+                    <div class="text-3xl font-extrabold text-white">₹6Cr+</div>
+                    <div class="text-sm text-slate-400 mt-1">Ad Spend Managed</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-extrabold text-white">6x</div>
+                    <div class="text-sm text-slate-400 mt-1">Average ROAS</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-extrabold text-white">11+</div>
+                    <div class="text-sm text-slate-400 mt-1">Countries Served</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-extrabold text-white">100%</div>
+                    <div class="text-sm text-slate-400 mt-1">Execution Focused</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: INDUSTRIES -->
+    <section class="industries" id="services">
+        <div class="industries-container">
+            <div class="industries-header">
+                <h2>Who We Help</h2>
+                <h3>Industries We Scale</h3>
+                <p>We build profitable acquisition systems for fast-growing brands across multiple industries.</p>
+            </div>
+
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg data-lucide="shopping-bag"></svg>
+                    </div>
+                    <h4>D2C & Ecommerce</h4>
+                    <p>Scale online stores with performance ads, creative testing and conversion-focused funnels.</p>
+                    <div class="industry-tags">
+                        <span class="industry-tag">Meta Ads</span>
+                        <span class="industry-tag">Google Ads</span>
+                        <span class="industry-tag">Shopify</span>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg data-lucide="briefcase-business"></svg>
+                    </div>
+                    <h4>B2B Lead Generation</h4>
+                    <p>Generate qualified business leads through Google, LinkedIn and Meta campaigns.</p>
+                    <div class="industry-tags">
+                        <span class="industry-tag">Google Search</span>
+                        <span class="industry-tag">LinkedIn</span>
+                        <span class="industry-tag">CRM</span>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg data-lucide="monitor-smartphone"></svg>
+                    </div>
+                    <h4>SaaS & Tech</h4>
+                    <p>Increase demo bookings, free trials and product adoption with scalable paid acquisition.</p>
+                    <div class="industry-tags">
+                        <span class="industry-tag">Demo Leads</span>
+                        <span class="industry-tag">Trials</span>
+                        <span class="industry-tag">Scaling</span>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg data-lucide="building-2"></svg>
+                    </div>
+                    <h4>Service Businesses</h4>
+                    <p>Drive consistent inquiries for local and high-ticket service-based businesses.</p>
+                    <div class="industry-tags">
+                        <span class="industry-tag">Lead Gen</span>
+                        <span class="industry-tag">Funnels</span>
+                        <span class="industry-tag">Automation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: FRAMEWORK -->
+    <section class="framework">
+        <div class="framework-container">
+            <div class="framework-header">
+                <h2>How We Execute</h2>
+                <h3>Our Proven Growth Framework</h3>
+                <p>Every campaign follows a structured system designed to maximize performance, reduce wasted spend and scale profitable growth.</p>
+            </div>
+
+            <div class="framework-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h4>Strategy & Research</h4>
+                    <p>Before spending a single rupee, we identify audience insights, competitor gaps and the best growth opportunities.</p>
+                    <div class="step-tags">
+                        <span class="step-tag">Audience</span>
+                        <span class="step-tag">Competitors</span>
+                        <span class="step-tag">Offer</span>
+                        <span class="step-tag">Tracking</span>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h4>Creative Production</h4>
+                    <p>We produce thumb-stopping creatives built to capture attention, improve CTR and increase conversions.</p>
+                    <div class="step-tags">
+                        <span class="step-tag">Video Ads</span>
+                        <span class="step-tag">UGC</span>
+                        <span class="step-tag">Static Ads</span>
+                        <span class="step-tag">Copywriting</span>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h4>Launch & Optimization</h4>
+                    <p>We launch campaigns across Meta & Google while continuously testing audiences, creatives and landing pages.</p>
+                    <div class="step-tags">
+                        <span class="step-tag">Meta Ads</span>
+                        <span class="step-tag">Google Ads</span>
+                        <span class="step-tag">A/B Testing</span>
+                        <span class="step-tag">CRO</span>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <h4>Scale & Growth</h4>
+                    <p>Once campaigns become profitable, we scale budgets strategically while maintaining efficiency and predictable growth.</p>
+                    <div class="step-tags">
+                        <span class="step-tag">Scaling</span>
+                        <span class="step-tag">ROAS</span>
+                        <span class="step-tag">Reporting</span>
+                        <span class="step-tag">Automation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: GROWTH STACK -->
+    <section class="growth-stack">
+        <div class="stack-container">
+            <div class="stack-header">
+                <h2>Growth Stack</h2>
+                <h3>The Technology Behind Every Campaign</h3>
+                <p>We combine industry-leading advertising, analytics, automation and creative tools to build scalable growth systems for modern brands.</p>
+            </div>
+
+            <div class="stack-grid">
+                <div class="stack-card-wrapper">
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <svg data-lucide="megaphone"></svg>
+                        </div>
+                        <h4>Paid Media</h4>
+                        <p>High-performance acquisition campaigns across today's most powerful advertising platforms.</p>
+                        <div class="stack-tools">
+                            <span class="stack-tool">Meta Ads</span>
+                            <span class="stack-tool">Google Ads</span>
+                            <span class="stack-tool">LinkedIn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-card-wrapper">
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <svg data-lucide="bar-chart-3"></svg>
+                        </div>
+                        <h4>Analytics</h4>
+                        <p>Measure every click, conversion and customer journey with advanced analytics.</p>
+                        <div class="stack-tools">
+                            <span class="stack-tool">GA4</span>
+                            <span class="stack-tool">GTM</span>
+                            <span class="stack-tool">Looker Studio</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-card-wrapper">
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <svg data-lucide="clapperboard"></svg>
+                        </div>
+                        <h4>Creative Studio</h4>
+                        <p>Scroll-stopping creatives engineered to increase CTR and conversion rates.</p>
+                        <div class="stack-tools">
+                            <span class="stack-tool">Video Ads</span>
+                            <span class="stack-tool">UGC</span>
+                            <span class="stack-tool">Static Ads</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-card-wrapper">
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <svg data-lucide="mouse-pointer-click"></svg>
+                        </div>
+                        <h4>Conversion Optimization</h4>
+                        <p>Turn more visitors into paying customers through testing and funnel optimization.</p>
+                        <div class="stack-tools">
+                            <span class="stack-tool">Landing Pages</span>
+                            <span class="stack-tool">Funnels</span>
+                            <span class="stack-tool">A/B Testing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-card-wrapper">
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <svg data-lucide="workflow"></svg>
+                        </div>
+                        <h4>Automation</h4>
+                        <p>Automated lead nurturing, CRM workflows and intelligent follow-up systems.</p>
+                        <div class="stack-tools">
+                            <span class="stack-tool">HubSpot</span>
+                            <span class="stack-tool">WhatsApp</span>
+                            <span class="stack-tool">n8n</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-card-wrapper">
+                    <div class="stack-card">
+                        <div class="stack-icon">
+                            <svg data-lucide="sparkles"></svg>
+                        </div>
+                        <h4>AI Systems</h4>
+                        <p>AI-powered workflows that improve creative production, reporting and campaign execution.</p>
+                        <div class="stack-tools">
+                            <span class="stack-tool">OpenAI</span>
+                            <span class="stack-tool">Claude</span>
+                            <span class="stack-tool">AI Agents</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES SECTION -->
+    <section id="case-studies" class="py-24 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div>
+                <h2 class="text-xs font-bold tracking-widest uppercase text-brand-primary mb-3">Proven Results</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Client Case Studies</h3>
+            </div>
+            <p class="text-slate-400 text-sm max-w-sm">Scroll horizontally to explore our milestone growth case studies across portfolios.</p>
+        </div>
+        
+        <div class="w-full overflow-x-auto no-scrollbar px-4 sm:px-6 lg:px-8">
+            <div class="flex gap-6 pb-4 w-max">
+                <div class="w-[350px] sm:w-[450px] bg-brand-card border border-slate-800 rounded-2xl p-8 flex flex-col justify-between shrink-0 hover:border-brand-primary/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-brand-primary/10 text-brand-primary text-xs font-semibold rounded-full">D2C E-Commerce</span>
+                            <span class="text-xs text-slate-400">Meta Advantage+</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Scaling D2C Brand to ₹32L+ Monthly Revenue</h4>
+                        <p class="text-slate-400 text-sm mb-6">Built a custom creative testing framework combined with optimized ASC campaign architecture.</p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800">
+                        <div>
+                            <div class="text-xs text-slate-400">Ad Spend</div>
+                            <div class="text-base font-bold text-white">₹4.8 Lakhs</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">ROAS</div>
+                            <div class="text-base font-bold text-white">6.8x</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">Revenue</div>
+                            <div class="text-base font-bold text-white">₹32.6L</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-[350px] sm:w-[450px] bg-brand-card border border-slate-800 rounded-2xl p-8 flex flex-col justify-between shrink-0 hover:border-brand-primary/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-brand-accent/10 text-brand-accent text-xs font-semibold rounded-full">Real Estate Leads</span>
+                            <span class="text-xs text-slate-400">Google + Meta Hybrid</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">High-Ticket Qualified Leads for Luxury Real Estate</h4>
+                        <p class="text-slate-400 text-sm mb-6">Designed instant qualification landing funnels that lowered acquisition costs significantly.</p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800">
+                        <div>
+                            <div class="text-xs text-slate-400">Ad Spend</div>
+                            <div class="text-base font-bold text-white">₹2.5 Lakhs</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">Cost / Lead</div>
+                            <div class="text-base font-bold text-white">₹340</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">Closed Sales</div>
+                            <div class="text-base font-bold text-white">14 Units</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-[350px] sm:w-[450px] bg-brand-card border border-slate-800 rounded-2xl p-8 flex flex-col justify-between shrink-0 hover:border-brand-primary/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-brand-primary/10 text-brand-primary text-xs font-semibold rounded-full">B2B SaaS</span>
+                            <span class="text-xs text-slate-400">LinkedIn & Google Search</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Enterprise Demo Pipeline Growth for B2B Tech</h4>
+                        <p class="text-slate-400 text-sm mb-6">Optimized user onboarding and high-intent keyword funnels for predictable bookings.</p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800">
+                        <div>
+                            <div class="text-xs text-slate-400">Ad Spend</div>
+                            <div class="text-base font-bold text-white">₹6.0 Lakhs</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">Demo CPL</div>
+                            <div class="text-base font-bold text-white">₹1,250</div>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">Pipeline</div>
+                            <div class="text-base font-bold text-white">₹1.4 Cr</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENT LOGO TICKER -->
+    <section id="work" class="py-16 bg-brand-card/30 border-t border-slate-800 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+            <h2 class="text-xs font-bold tracking-widest uppercase text-slate-400 text-center">Trusted By Brands Across Industries</h2>
+        </div>
+        <div class="relative w-full overflow-hidden flex whitespace-nowrap no-scrollbar">
+            <div class="flex animate-marquee gap-8 items-center">
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <img src="images/dolphy.png" alt="Dolphy India" class="h-10 w-auto object-contain mb-2">
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">Manufacture B2B Lead Genration</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <img src="images/elitwave.webp" alt="Elite Wave" class="h-10 w-auto object-contain mb-2">
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">D2C Fashion Saree</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <img src="images/Elribird.png" alt="Elribird India" class="h-10 w-auto object-contain mb-2">
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">Hotel OS&E Manufacture</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <img src="images/lordpetrick.png" alt="Lord Petrick" class="h-10 w-auto object-contain mb-2">
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">Restaurants Chain</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <img src="images/mira.png" alt="Mira Gems" class="h-10 w-auto object-contain mb-2">
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">Lab Grown Diamond Manufacture</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <img src="images/stalktobuy.webp" alt="Stalktobuy" class="h-10 w-auto object-contain mb-2">
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">D2C Fashion Saree</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <img src="images/wrapwolf.png" alt="Wrapwolf" class="h-10 w-auto object-contain mb-2">
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">D2C Fashion T-shirt Brand</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <img src="images/ycs.png" alt="Yanolja Cloud Solution" class="h-10 w-auto object-contain mb-2">
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">Hotel Software Saas Industry</span>
+                </div>
+                <!-- Duplicate for Marquee Infinite Scroll Effect -->
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <img src="images/dolphy.png" alt="Dolphy India" class="h-10 w-auto object-contain mb-2">
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">Manufacture B2B Lead Genration</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <img src="images/elitwave.webp" alt="Elite Wave" class="h-10 w-auto object-contain mb-2">
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">D2C Fashion Saree</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <img src="images/Elribird.png" alt="Elribird India" class="h-10 w-auto object-contain mb-2">
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">Hotel OS&E Manufacture</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <img src="images/lordpetrick.png" alt="Lord Petrick" class="h-10 w-auto object-contain mb-2">
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">Restaurants Chain</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <img src="images/mira.png" alt="Mira Gems" class="h-10 w-auto object-contain mb-2">
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">Lab Grown Diamond Manufacture B2B</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <img src="images/stalktobuy.webp" alt="Stalktobuy" class="h-10 w-auto object-contain mb-2">
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">D2C Fashion Saree</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <img src="images/wrapwolf.png" alt="Wrapwolf" class="h-10 w-auto object-contain mb-2">
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">D2C Fashion T-shirt Brand</span>
+                </div>
+                <div class="inline-flex flex-col justify-center items-center w-52 h-28 bg-brand-card border border-slate-800 rounded-xl p-4 text-center shrink-0 hover:border-brand-primary transition">
+                    <img src="images/ycs.png" alt="Yanolja Cloud Solution" class="h-10 w-auto object-contain mb-2">
+                    <span class="text-[10px] text-white mt-1 uppercase tracking-wider font-semibold">Hotel Software Saas Industry</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-24 border-t border-slate-800 bg-brand-card/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-xs font-bold tracking-widest uppercase text-brand-primary mb-3">Got Questions?</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Frequently Asked Questions</h3>
+            </div>
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-brand-card border border-slate-800 rounded-xl">
+                    <button class="faq-question w-full flex justify-between items-center p-2.5 text-left cursor-pointer">
+                        <span class="font-bold text-white text-base">How much budget do I need to start Meta or Google Ads?</span>
+                        <span class="faq-icon text-brand-primary text-sm">▼</span>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6">
+                        <p class="text-slate-400 text-sm">The ideal budget depends on your industry, competition, and goals. For most businesses, we recommend starting with enough budget to collect meaningful data before scaling profitable campaigns.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card border border-slate-800 rounded-xl">
+                    <button class="faq-question w-full flex justify-between items-center p-2.5 text-left cursor-pointer">
+                        <span class="font-bold text-white text-base">Do you work with D2C, B2B, and SaaS businesses?</span>
+                        <span class="faq-icon text-brand-primary text-sm">▼</span>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6">
+                        <p class="text-slate-400 text-sm">Yes. We build growth strategies for D2C brands, B2B lead generation, SaaS companies, and service businesses using performance marketing, creative testing, and conversion optimization.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card border border-slate-800 rounded-xl">
+                    <button class="faq-question w-full flex justify-between items-center p-2.5 text-left cursor-pointer">
+                        <span class="font-bold text-white text-base">How long does it take to see results?</span>
+                        <span class="faq-icon text-brand-primary text-sm">▼</span>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6">
+                        <p class="text-slate-400 text-sm">Most campaigns require an initial learning and testing phase. After gathering sufficient data, we optimize targeting, creatives, and bidding strategies to improve performance over time.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card border border-slate-800 rounded-xl">
+                    <button class="faq-question w-full flex justify-between items-center p-2.5 text-left cursor-pointer">
+                        <span class="font-bold text-white text-base">Do you only manage ads or also create ad creatives?</span>
+                        <span class="faq-icon text-brand-primary text-sm">▼</span>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6">
+                        <p class="text-slate-400 text-sm">We handle both. Our team creates high-converting static ads, video ads, UGC creatives, landing page recommendations, and manages Meta & Google Ads under one strategy.</p>
+                    </div>
+                </div>
+               
+                <div class="bg-brand-card border border-slate-800 rounded-xl">
+                    <button class="faq-question w-full flex justify-between items-center p-2.5 text-left cursor-pointer">
+                        <span class="font-bold text-white text-base">How do you measure campaign success?</span>
+                        <span class="faq-icon text-brand-primary text-sm">▼</span>
+                    </button> 
+                    <div class="faq-answer hidden px-6 pb-6">
+                        <p class="text-slate-400 text-sm">We track KPIs such as ROAS, CPA, CPL, Conversion Rate, Revenue, Qualified Leads, and customer acquisition costs using GA4, Meta Pixel, Google Ads, and server-side tracking where required.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLEAN BOTTOM CTA SECTION -->
+    <section class="py-24 border-t border-slate-800 bg-brand-card/20 text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl sm:text-5xl font-extrabold text-white mb-6">Ready to Scale Your Growth?</h3>
+            <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto mb-10">
+                Let's discuss how we can engineer predictable revenue acquisition funnels for your brand.
+            </p>
+            <button onclick="openModal()" class="bg-gradient-to-r from-brand-primary to-brand-accent text-white px-10 py-5 rounded-2xl font-bold text-lg hover:opacity-95 hover:scale-[1.02] transition-all duration-200 shadow-2xl shadow-brand-primary/30 cursor-pointer inline-flex items-center gap-3">
+                Request Custom Strategy Proposal <i data-lucide="arrow-right" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-16 border-t border-slate-800 bg-brand-card/50 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <div>
+                <a href="#" class="text-2xl font-extrabold tracking-tighter text-white flex items-center gap-2 mb-4">
+                    FOUR<span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent">STICK</span>
+                </a>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Your dedicated performance marketing and growth partner engineered for scalable, predictable revenue generation.
+                </p>
+            </div>
+            <div>
+                <h5 class="text-white font-bold text-sm mb-4">Quick Navigation</h5>
+                <ul class="space-y-2.5 text-xs">
+                    <li><a href="#services" class="hover:text-white transition">Services</a></li>
+                    <li><a href="#work" class="hover:text-white transition">Portfolio</a></li>
+                    <li><a href="#case-studies" class="hover:text-white transition">Case Studies</a></li>
+                    <li><a href="#faq" class="hover:text-white transition">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold text-sm mb-4">Ecosystem</h5>
+                <ul class="space-y-2.5 text-xs">
+                    <li><a href="https://instagram.com/fourstick.ads" target="_blank" class="hover:text-white transition">Fourstick Ads (IG) ↗</a></li>
+                    <li><a href="https://instagram.com/fourstick.studio" target="_blank" class="text-brand-accent hover:underline">Fourstick Studio (IG) ↗</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-bold text-sm mb-4">Get In Touch</h5>
+                <ul class="space-y-2.5 text-xs">
+                    <li>Email: <a href="mailto:hello@fourstick.com" class="text-slate-300 hover:text-white">hello@fourstick.com</a></li>
+                    <li>Phone: <a href="tel:+919876543210" class="text-slate-300 hover:text-white">+91 98765 43210</a></li>
+                    <li class="pt-2 text-slate-500">Mumbai, India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+            <div>© 2026 FOURSTICK. All rights reserved.</div>
+            <div class="flex gap-6">
+                <a href="https://instagram.com/fourstick.ads" target="_blank" class="hover:text-slate-300 transition">Fourstick Ads</a>
+                <a href="https://instagram.com/fourstick.studio" target="_blank" class="hover:text-slate-300 transition">Fourstick Studio</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- POPUP MODAL -->
+    <div id="proposal-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 p-4 overflow-y-auto">
+        <div class="bg-white text-slate-900 w-full max-w-4xl rounded-3xl p-6 sm:p-10 relative shadow-2xl transform scale-95 transition-transform duration-300 my-auto max-h-[90vh] overflow-y-auto no-scrollbar">
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-500 hover:text-slate-900 text-2xl font-bold focus:outline-none cursor-pointer z-10">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <!-- Left Column -->
+                <div class="space-y-6">
+                    <div>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                            Send a <br>message.
+                        </h2>
+                        <p class="mt-3 text-slate-600 text-sm">We're here to answer any question you may have.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6 border-t border-slate-200">
+                        <div>
+                            <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">careers</div>
+                            <div class="text-xs text-slate-600 mb-1">Would you like to join our growing team?</div>
+                            <a href="mailto:Hr@fourstick.com" class="text-xs font-bold text-slate-900 hover:underline">fourstick09@gmail.com</a>
+                        </div>
+                        <div>
+                            <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Feedbacks</div>
+                            <div class="text-xs text-slate-600 mb-1">Have a project in mind?</div>
+                            <a href="mailto:Hi@fourstick.com" class="text-xs font-bold text-slate-900 hover:underline">fourstick09@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form -->
+                <div>
+                    <form action="https://formspree.io/f/xkodqjyw" method="POST" class="space-y-4">
+                        <input type="hidden" name="_next" value="thankyou.html">
+                        <input type="text" name="_gotcha" class="hidden-honey" tabindex="-1" autocomplete="off">
+
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Your Name</label>
+                            <input type="text" name="name" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="Vikash Mistri">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Email Address</label>
+                            <input type="email" name="email" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="hello@fourstick.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Phone Number</label>
+                            <input type="tel" name="phone" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="+91 98765 43210">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Company Name</label>
+                            <input type="text" name="company" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="Fourstick Agency">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Website</label>
+                            <input type="text" name="website" class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="https://yourbrand.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Ads Budget</label>
+                            <input type="text" name="ads_budget" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="e.g. ₹2,00,000">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-500 mb-1">City</label>
+                                <input type="text" name="city" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="Mumbai">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-500 mb-1">State</label>
+                                <input type="text" name="state" required class="w-full border-b border-slate-300 py-2 text-slate-900 text-sm focus:outline-none focus:border-indigo-600 bg-transparent placeholder-slate-300" placeholder="Maharashtra">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-indigo-500 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-indigo-600 transition-all duration-200 mt-6 cursor-pointer tracking-wider text-xs uppercase">
+                            SEND MESSAGE
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript Link -->
+    <script src="script.js"></script>
+    
+</body>
+</html>
