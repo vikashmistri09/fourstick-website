@@ -646,15 +646,13 @@
                 <img src="images/logo2.png" alt="FOURSTICK Logo" style="width: 150px; height: auto;">
             </a>
             <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                <a href="#industries" class="hover:text-brand-primary transition">Industries We Serve</a>
                 <a href="#services" class="hover:text-brand-primary transition">Services</a>
                 <a href="#work" class="hover:text-brand-primary transition">Portfolio</a>
                 <a href="#case-studies" class="hover:text-brand-primary transition">Case Studies</a>
                 <a href="#faq" class="hover:text-brand-primary transition">FAQ</a>
                 <div class="relative group py-2">
-                    <button class="flex items-center gap-1.5 text-slate-300 hover:text-white transition font-medium cursor-pointer">
-                        <span>Ecosystem</span>
-                        <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400"></i>
-                    </button>
+                    
                     <div class="absolute top-full left-0 w-52 bg-brand-card border border-slate-800 rounded-xl shadow-2xl py-2 hidden group-hover:block transition-all">
                         <a href="https://instagram.com/fourstick.ads" target="_blank" class="block px-4 py-2.5 hover:bg-slate-800/60 transition">
                             <div class="text-xs font-bold text-white flex items-center justify-between">Fourstick Ads <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i></div>
@@ -678,16 +676,13 @@
         </div>
         <!-- Mobile Dropdown Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-slate-800 px-6 py-4 space-y-3">
-            <a href="#services" class="block text-slate-300 hover:text-white py-1.5">Services</a>
-            <a href="#work" class="block text-slate-300 hover:text-white py-1.5">Portfolio</a>
-            <a href="#case-studies" class="block text-slate-300 hover:text-white py-1.5">Case Studies</a>
-            <a href="#faq" class="block text-slate-300 hover:text-white py-1.5">FAQ</a>
-            <div class="py-2 border-t border-slate-800 space-y-2">
-                <a href="https://instagram.com/fourstick.ads" target="_blank" class="block text-xs font-bold text-white">Instagram: Fourstick Ads ↗</a>
-                <a href="https://instagram.com/fourstick.studio" target="_blank" class="block text-xs font-bold text-brand-accent">Instagram: Fourstick Studio ↗</a>
-            </div>
-            <button onclick="openModal()" class="w-full text-center bg-gradient-to-r from-brand-primary to-brand-accent text-white py-2.5 rounded-full font-semibold text-sm">Get Proposal</button>
-        </div>
+       <a href="#industries" onclick="closeMobileMenu()" class="block text-slate-300 hover:text-white py-1.5">Industries We Serve</a>
+       <a href="#services" onclick="closeMobileMenu()" class="block text-slate-300 hover:text-white py-1.5">Services</a>
+       <a href="#work" onclick="closeMobileMenu()" class="block text-slate-300 hover:text-white py-1.5">Portfolio</a>
+       <a href="#case-studies" onclick="closeMobileMenu()" class="block text-slate-300 hover:text-white py-1.5">Case Studies</a>
+       <a href="#faq" onclick="closeMobileMenu()" class="block text-slate-300 hover:text-white py-1.5">FAQ</a>
+     </div>
+        
     </header>
 
     <!-- HERO SECTION -->
@@ -733,7 +728,7 @@
     </section>
 
     <!-- SECTION 1: INDUSTRIES -->
-    <section class="industries" id="services">
+    <section class="industries" id="industries">
         <div class="industries-container">
             <div class="industries-header">
                 <h2>Who We Help</h2>
@@ -859,11 +854,11 @@
     </section>
 
     <!-- SECTION 3: GROWTH STACK -->
-    <section class="growth-stack">
+    <section class="growth stack" id="services">
         <div class="stack-container">
             <div class="stack-header">
                 <h2>Growth Stack</h2>
-                <h3>The Technology Behind Every Campaign</h3>
+                <h3>Performance Marketing & Creative Services</h3>
                 <p>We combine industry-leading advertising, analytics, automation and creative tools to build scalable growth systems for modern brands.</p>
             </div>
 
@@ -1361,17 +1356,14 @@
             <div>
                 <h5 class="text-white font-bold text-sm mb-4">Quick Navigation</h5>
                 <ul class="space-y-2.5 text-xs">
-                    <li><a href="#services" class="hover:text-white transition">Services</a></li>
+                    <li><a href="#industries" class="hover:text-white transition">industries We Serve</a></li>
                     <li><a href="#work" class="hover:text-white transition">Portfolio</a></li>
                     <li><a href="#case-studies" class="hover:text-white transition">Case Studies</a></li>
                     <li><a href="#faq" class="hover:text-white transition">FAQs</a></li>
                 </ul>
             </div>
             <div>
-                <h5 class="text-white font-bold text-sm mb-4">Ecosystem</h5>
-                <ul class="space-y-2.5 text-xs">
-                    <li><a href="https://instagram.com/fourstick.ads" target="_blank" class="hover:text-white transition">Fourstick Ads (IG) ↗</a></li>
-                    <li><a href="https://instagram.com/fourstick.studio" target="_blank" class="text-brand-accent hover:underline">Fourstick Studio (IG) ↗</a></li>
+                
                 </ul>
             </div>
             <div>
@@ -1532,7 +1524,12 @@
 
     });
 
-});      
+});    
+
+        function closeMobileMenu() {
+    document.getElementById("mobile-menu").classList.add("hidden");
+}
+        
     </script>
     
 </body>
