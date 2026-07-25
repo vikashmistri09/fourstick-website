@@ -302,14 +302,19 @@ html, body {
 
 /* GROWTH STACK SECTION */
 .growth-stack {
-    padding: 10px 20px;
+    padding: 120px 20px; /* 60px se 120px kiya top-bottom padding */
     background: linear-gradient(135deg, #050507 0%, #0f0f14 100%);
     border-top: 1px solid #1e293b;
+    min-height: 100vh; /* Full viewport height */
+    display: flex; /* Flex add kiya */
+    align-items: center; /* Vertical center */
+    justify-content: center; /* Horizontal center */
 }
 
 .stack-container {
     max-width: 1280px;
     margin: 0 auto;
+    width: 100%; /* Width 100% ensure kar */
 }
 
 .stack-header {
@@ -342,6 +347,7 @@ html, body {
     font-size: 15px;
     max-width: 700px;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
 .stack-grid {
