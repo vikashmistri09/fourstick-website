@@ -61,3 +61,4 @@ document.querySelectorAll(".faq-question").forEach((question) => {
 function closeMobileMenu() {
     document.getElementById("mobile-menu").classList.add("hidden");
 }
+lucide.createIcons();
