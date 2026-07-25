@@ -526,6 +526,39 @@ html, body {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .stack-card p{
+    display:none;
+}
+
+.stack-card{
+    padding:14px;
+}
+
+.stack-icon{
+    width:44px;
+    height:44px;
+    margin-bottom:14px;
+}
+
+.stack-icon svg{
+    width:24px;
+    height:24px;
+}
+
+.stack-card h4{
+    font-size:16px;
+    margin-bottom:10px;
+}
+
+.stack-tools{
+    gap:6px;
+}
+
+.stack-tool{
+    font-size:10px;
+    padding:4px 8px;
+}
+
     .industry-card:hover {
         transform: translateY(-8px) scale(1.01);
     }
