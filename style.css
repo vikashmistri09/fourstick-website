@@ -595,3 +595,28 @@ html, body {
         padding: 20px;
     }
 }
+/* Social Icons */
+.social-icons a{
+    width:48px;
+    height:48px;
+    border:1px solid #334155;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#cbd5e1;
+    transition:all .3s ease;
+}
+
+.social-icons a i{
+    font-size:20px;
+    line-height:1;
+}
+
+.social-icons a:hover{
+    background:#7c3aed;
+    border-color:#7c3aed;
+    color:#fff;
+}
+
+}
