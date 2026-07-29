@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fourstick — Global Digital Agency & Technology Partner</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fourstick: {
+                            bg: '#0A0D14',
+                            surface: '#121722',
+                            border: '#1E2638',
+                            accent: '#3B82F6',
+                            glow: '#60A5FA',
+                            textPrimary: '#F8FAFC',
+                            textSecondary: '#94A3B8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background-color: #0A0D14;
+            color: #F8FAFC;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(18, 23, 34, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(30, 38, 56, 0.6);
+        }
+        .glow-effect {
+            box-shadow: 0 0 50px -10px rgba(59, 130, 246, 0.15);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #FFFFFF 0%, #94A3B8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .accent-gradient {
+            background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-fourstick-accent selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-fourstick-border transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-fourstick-accent flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-fourstick-accent/20 group-hover:scale-105 transition-transform">
+                    F
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display font-bold text-lg tracking-tight text-white leading-none">FOURSTICK</span>
+                    <span class="text-[10px] text-fourstick-textSecondary tracking-widest uppercase mt-0.5">Kpsons Info Tech</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#services" class="text-sm text-fourstick-textSecondary hover:text-white transition-colors">Services</a>
+                <a href="#about" class="text-sm text-fourstick-textSecondary hover:text-white transition-colors">About</a>
+                <a href="#portfolio" class="text-sm text-fourstick-textSecondary hover:text-white transition-colors">Work</a>
+                <a href="#process" class="text-sm text-fourstick-textSecondary hover:text-white transition-colors">Process</a>
+                <a href="#contact" class="text-sm text-fourstick-textSecondary hover:text-white transition-colors">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-fourstick-accent text-white font-medium text-sm hover:bg-blue-600 transition-all shadow-lg shadow-fourstick-accent/20 hover:scale-[1.02] active:scale-[0.98]">
+                    Let's Talk
+                </a>
+                <button class="md:hidden text-fourstick-textSecondary hover:text-white" id="mobile-menu-btn" aria-label="Toggle Menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="fixed inset-0 z-40 bg-fourstick-bg/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-8 text-xl font-display font-medium hidden" id="mobile-menu">
+        <button class="absolute top-6 right-6 text-fourstick-textSecondary hover:text-white" id="mobile-menu-close" aria-label="Close Menu">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="#services" class="mobile-nav-link text-fourstick-textSecondary hover:text-white transition-colors">Services</a>
+        <a href="#about" class="mobile-nav-link text-fourstick-textSecondary hover:text-white transition-colors">About</a>
+        <a href="#portfolio" class="mobile-nav-link text-fourstick-textSecondary hover:text-white transition-colors">Work</a>
+        <a href="#process" class="mobile-nav-link text-fourstick-textSecondary hover:text-white transition-colors">Process</a>
+        <a href="#contact" class="mobile-nav-link px-8 py-3 rounded-xl bg-fourstick-accent text-white font-medium text-base">Let's Talk</a>
+    </div>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6 overflow-hidden">
+            <!-- Background Gradients -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-fourstick-accent/10 rounded-full blur-[120px] pointer-events-none"></div>
+            
+            <div class="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-fourstick-border mb-8 animate-fade-in">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-xs font-medium text-fourstick-textSecondary tracking-wide uppercase">Global Digital Agency & Tech Partner</span>
+                </div>
+
+                <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
+                    Engineering <span class="accent-gradient">Digital Excellence</span> for Global Brands.
+                </h1>
+
+                <p class="text-lg sm:text-xl text-fourstick-textSecondary max-w-2xl mb-10 font-normal leading-relaxed">
+                    Fourstick (Kpsons Info Tech) transforms ambitious businesses through world-class UI/UX design, high-performance engineering, and data-driven digital growth strategies.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                    <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-fourstick-accent text-white font-medium hover:bg-blue-600 transition-all shadow-xl shadow-fourstick-accent/25 hover:scale-[1.02]">
+                        Start a Project <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#portfolio" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl glass-panel text-white font-medium hover:border-fourstick-accent/50 transition-all">
+                        View Our Work
+                    </a>
+                </div>
+
+                <!-- Trust Metrics Bar -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-12 border-t border-fourstick-border w-full text-left">
+                    <div>
+                        <div class="font-display text-3xl font-bold text-white mb-1">150+</div>
+                        <div class="text-sm text-fourstick-textSecondary">Completed Projects</div>
+                    </div>
+                    <div>
+                        <div class="font-display text-3xl font-bold text-white mb-1">98%</div>
+                        <div class="text-sm text-fourstick-textSecondary">Client Satisfaction</div>
+                    </div>
+                    <div>
+                        <div class="font-display text-3xl font-bold text-white mb-1">12+</div>
+                        <div class="text-sm text-fourstick-textSecondary">Global Countries</div>
+                    </div>
+                    <div>
+                        <div class="font-display text-3xl font-bold text-white mb-1">5+</div>
+                        <div class="text-sm text-fourstick-textSecondary">Years Excellence</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLIENT LOGOS / SOCIAL PROOF -->
+        <section class="py-12 border-y border-fourstick-border bg-fourstick-surface/30">
+            <div class="max-w-7xl mx-auto px-6">
+                <p class="text-center text-xs font-semibold uppercase tracking-widest text-fourstick-textSecondary mb-8">Trusted by fast-growing startups and global enterprises</p>
+                <div class="flex flex-wrap items-center justify-center gap-10 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all">
+                    <span class="font-display font-bold text-lg tracking-wider text-white">ACME CORP</span>
+                    <span class="font-display font-bold text-lg tracking-wider text-white">TECHVISTA</span>
+                    <span class="font-display font-bold text-lg tracking-wider text-white">NEXUS AI</span>
+                    <span class="font-display font-bold text-lg tracking-wider text-white">GLOBAL LOGISTICS</span>
+                    <span class="font-display font-bold text-lg tracking-wider text-white">VORTEX LABS</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-28 px-6 relative">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-fourstick-accent/10 text-fourstick-accent text-xs font-semibold uppercase tracking-wider mb-4">
+                        Who We Are
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight mb-6">
+                        We blend creative vision with deep technical execution.
+                    </h2>
+                    <p class="text-fourstick-textSecondary leading-relaxed mb-6">
+                        Operating under Kpsons Info Tech, Fourstick is built on precision, innovation, and uncompromising quality. We partner with forward-thinking leaders to craft digital products that dominate markets and scale effortlessly.
+                    </p>
+                    <p class="text-fourstick-textSecondary leading-relaxed mb-8">
+                        Our cross-functional teams specialize in turning complex challenges into streamlined, high-converting digital realities.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 pt-4 border-t border-fourstick-border">
+                        <div>
+                            <h3 class="font-display font-bold text-white text-lg mb-1">User-Centric First</h3>
+                            <p class="text-sm text-fourstick-textSecondary">Deep UX research meets breathtaking aesthetics.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-white text-lg mb-1">Scale Ready</h3>
+                            <p class="text-sm text-fourstick-textSecondary">Enterprise-grade architecture built to handle growth.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-fourstick-accent/20 to-transparent rounded-3xl blur-2xl"></div>
+                    <div class="glass-panel p-8 sm:p-12 rounded-3xl relative z-10 border border-fourstick-border">
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-fourstick-accent/10 flex items-center justify-center text-fourstick-accent font-bold">01</div>
+                                <div>
+                                    <h4 class="font-display font-bold text-white">Strategy & Discovery</h4>
+                                    <p class="text-sm text-fourstick-textSecondary">Aligning business goals with user needs.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-fourstick-accent/10 flex items-center justify-center text-fourstick-accent font-bold">02</div>
+                                <div>
+                                    <h4 class="font-display font-bold text-white">UI/UX Craftsmanship</h4>
+                                    <p class="text-sm text-fourstick-textSecondary">Pixel-perfect interfaces & frictionless flows.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-fourstick-accent/10 flex items-center justify-center text-fourstick-accent font-bold">03</div>
+                                <div>
+                                    <h4 class="font-display font-bold text-white">Engineering & Scale</h4>
+                                    <p class="text-sm text-fourstick-textSecondary">Robust, lightning-fast modern codebases.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="py-28 px-6 bg-fourstick-surface/20 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-20">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-fourstick-accent/10 text-fourstick-accent text-xs font-semibold uppercase tracking-wider mb-4">
+                        Our Expertise
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight mb-6">
+                        Comprehensive Digital Solutions
+                    </h2>
+                    <p class="text-fourstick-textSecondary">
+                        Tailored services designed to elevate your brand, capture market share, and drive predictable revenue.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="glass-panel p-8 rounded-3xl hover:border-fourstick-accent/50 transition-all group">
+                        <div class="w-14 h-14 rounded-2xl bg-fourstick-accent/10 flex items-center justify-center text-fourstick-accent mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="layout" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-3">UI/UX Design</h3>
+                        <p class="text-fourstick-textSecondary text-sm leading-relaxed mb-6">
+                            Creating intuitive, beautiful digital experiences that captivate users and maximize conversion rates.
+                        </p>
+                        <ul class="space-y-2 text-xs text-fourstick-textSecondary">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-fourstick-accent"></i> Design Systems</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-fourstick-accent"></i> Wireframing & Prototyping</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-fourstick-accent"></i> User Research & Testing</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="glass-panel p-8 rounded-3xl hover:border-fourstick-accent/50 transition-all group">
+                        <div class="w-14 h-14 rounded-2xl bg-fourstick-accent/10 flex items-center justify-center text-fourstick-accent mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="code" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-3">Frontend Development</h3>
+                        <p class="text-fourstick-textSecondary text-sm leading-relaxed mb-6">
+                            Building lightning-fast, responsive web applications with modern frameworks and pristine code architecture.
+                        </p>
+                        <ul class="space-y-2 text-xs text-fourstick-textSecondary">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-fourstick-accent"></i> React, Next.js & Vue</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-fourstick-accent"></i> Smooth Micro-interactions</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-fourstick-accent"></i> Web Performance Optimization</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="glass-panel p-8 rounded-3xl hover:border-fourstick-accent/50 transition-all group">
+                        <div class="w-14 h-14 rounded-2xl bg-fourstick-accent/10 flex items-center justify-center text-fourstick-accent mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="trending-up" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-3">Digital Growth & Ads</h3>
+                        <p class="text-fourstick-textSecondary text-sm leading-relaxed mb-6">
+                            Data-driven advertising and lead generation campaigns designed to scale your customer acquisition.
+                        </p>
+                        <ul class="space-y-2 text-xs text-fourstick-textSecondary">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-fourstick-accent"></i> Targeted Paid Media</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-fourstick-accent"></i> Conversion Rate Optimization</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-fourstick-accent"></i> Analytics & Attribution</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO SECTION -->
+        <section id="portfolio" class="py-28 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-fourstick-accent/10 text-fourstick-accent text-xs font-semibold uppercase tracking-wider mb-4">
+                            Featured Work
+                        </div>
+                        <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight">
+                            Recent Success Stories
+                        </h2>
+                    </div>
+                    <a href="#contact" class="hidden md:inline-flex items-center gap-2 text-sm font-medium text-fourstick-accent hover:text-white transition-colors mt-4 md:mt-0">
+                        View All Projects <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Project 1 -->
+                    <div class="glass-panel rounded-3xl overflow-hidden group border border-fourstick-border hover:border-fourstick-accent/50 transition-all">
+                        <div class="h-72 bg-gradient-to-br from-fourstick-surface to-fourstick-border relative overflow-hidden flex items-center justify-center p-8">
+                            <div class="absolute inset-0 bg-fourstick-accent/10 group-hover:scale-105 transition-transform duration-500"></div>
+                            <span class="font-display text-2xl font-bold text-white tracking-widest relative z-10">FINTECH PLATFORM</span>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex items-center gap-2 text-xs font-semibold text-fourstick-accent uppercase tracking-wider mb-3">
+                                UI/UX Design • Frontend Architecture
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-white mb-3">Global Wealth Management Dashboard</h3>
+                            <p class="text-fourstick-textSecondary text-sm mb-6">
+                                Redesigned an enterprise trading platform interface, increasing user engagement by 42% and reducing customer onboarding friction.
+                            </p>
+                            <a href="#contact" class="inline-flex items-center gap-2 text-sm font-medium text-white group-hover:text-fourstick-accent transition-colors">
+                                Read Case Study <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="glass-panel rounded-3xl overflow-hidden group border border-fourstick-border hover:border-fourstick-accent/50 transition-all">
+                        <div class="h-72 bg-gradient-to-br from-fourstick-surface to-fourstick-border relative overflow-hidden flex items-center justify-center p-8">
+                            <div class="absolute inset-0 bg-blue-600/10 group-hover:scale-105 transition-transform duration-500"></div>
+                            <span class="font-display text-2xl font-bold text-white tracking-widest relative z-10">E-COMMERCE SCALE</span>
+                        </div>
+                        <div class="p-8">
+                            <div class="flex items-center gap-2 text-xs font-semibold text-fourstick-accent uppercase tracking-wider mb-3">
+                                Growth Strategy • Web Development
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-white mb-3">D2C Lifestyle Brand Growth Engine</h3>
+                            <p class="text-fourstick-textSecondary text-sm mb-6">
+                                Scaled targeted lead generation and performance advertising campaigns yielding a 3.4x ROAS within 90 days.
+                            </p>
+                            <a href="#contact" class="inline-flex items-center gap-2 text-sm font-medium text-white group-hover:text-fourstick-accent transition-colors">
+                                Read Case Study <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS SECTION -->
+        <section id="process" class="py-28 px-6 bg-fourstick-surface/20">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-20">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-fourstick-accent/10 text-fourstick-accent text-xs font-semibold uppercase tracking-wider mb-4">
+                        How We Work
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight mb-6">
+                        Our Proven Delivery Process
+                    </h2>
+                    <p class="text-fourstick-textSecondary">
+                        A structured, transparent methodology ensuring absolute alignment and flawless execution from day one.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="glass-panel p-8 rounded-3xl relative">
+                        <span class="text-5xl font-extrabold text-fourstick-border font-display absolute top-6 right-6">01</span>
+                        <h3 class="font-display text-lg font-bold text-white mb-2 mt-6">Discovery</h3>
+                        <p class="text-xs text-fourstick-textSecondary leading-relaxed">
+                            Deep dive into your business model, target audience, and precise technical requirements.
+                        </p>
+                    </div>
+                    <div class="glass-panel p-8 rounded-3xl relative">
+                        <span class="text-5xl font-extrabold text-fourstick-border font-display absolute top-6 right-6">02</span>
+                        <h3 class="font-display text-lg font-bold text-white mb-2 mt-6">Design</h3>
+                        <p class="text-xs text-fourstick-textSecondary leading-relaxed">
+                            Crafting high-fidelity interactive wireframes and world-class UI design systems.
+                        </p>
+                    </div>
+                    <div class="glass-panel p-8 rounded-3xl relative">
+                        <span class="text-5xl font-extrabold text-fourstick-border font-display absolute top-6 right-6">03</span>
+                        <h3 class="font-display text-lg font-bold text-white mb-2 mt-6">Engineering</h3>
+                        <p class="text-xs text-fourstick-textSecondary leading-relaxed">
+                            Writing clean, modular code with rigorous testing across all devices and browsers.
+                        </p>
+                    </div>
+                    <div class="glass-panel p-8 rounded-3xl relative">
+                        <span class="text-5xl font-extrabold text-fourstick-border font-display absolute top-6 right-6">04</span>
+                        <h3 class="font-display text-lg font-bold text-white mb-2 mt-6">Launch & Scale</h3>
+                        <p class="text-xs text-fourstick-textSecondary leading-relaxed">
+                            Seamless deployment, performance monitoring, and continuous conversion optimization.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section class="py-28 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-20">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-fourstick-accent/10 text-fourstick-accent text-xs font-semibold uppercase tracking-wider mb-4">
+                        Client Testimonials
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight mb-6">
+                        Trusted by Industry Leaders
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-fourstick-border">
+                        <div class="flex items-center gap-1 text-amber-400 mb-6">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                        <p class="text-white text-base sm:text-lg mb-8 leading-relaxed">
+                            "Fourstick completely revolutionized our digital presence. Their attention to UI/UX detail and robust engineering delivered a product that our users love and investors rave about."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-fourstick-accent/20 flex items-center justify-center font-bold text-fourstick-accent">
+                                JD
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-white">Jonathan Davis</h4>
+                                <p class="text-xs text-fourstick-textSecondary">CEO, Fintech Nova</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-fourstick-border">
+                        <div class="flex items-center gap-1 text-amber-400 mb-6">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                        <p class="text-white text-base sm:text-lg mb-8 leading-relaxed">
+                            "The professionalism and technical expertise at Kpsons Info Tech are second to none. They delivered our complex web platform ahead of schedule with immaculate code quality."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-fourstick-accent/20 flex items-center justify-center font-bold text-fourstick-accent">
+                                SM
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-white">Sarah Miller</h4>
+                                <p class="text-xs text-fourstick-textSecondary">VP of Product, Nexus AI</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA BANNER SECTION -->
+        <section class="py-20 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="glass-panel p-12 sm:p-20 rounded-3xl border border-fourstick-border text-center relative overflow-hidden bg-gradient-to-b from-fourstick-surface to-fourstick-bg">
+                    <div class="absolute -top-24 -left-24 w-96 h-96 bg-fourstick-accent/15 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white mb-6 tracking-tight relative z-10">
+                        Ready to elevate your digital footprint?
+                    </h2>
+                    <p class="text-fourstick-textSecondary max-w-xl mx-auto mb-10 text-base sm:text-lg relative z-10">
+                        Let's collaborate to build something extraordinary. Get in touch with our leadership team today.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-fourstick-accent text-white font-medium hover:bg-blue-600 transition-all shadow-xl shadow-fourstick-accent/25 hover:scale-105 relative z-10">
+                        Schedule a Discovery Call <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-28 px-6 bg-fourstick-surface/20">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-fourstick-accent/10 text-fourstick-accent text-xs font-semibold uppercase tracking-wider mb-4">
+                        Get In Touch
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-5xl font-bold tracking-tight mb-6">
+                        Let's build your next big breakthrough.
+                    </h2>
+                    <p class="text-fourstick-textSecondary mb-10 leading-relaxed">
+                        Fill out the form or reach out directly via email. Our team typically responds within 2 business hours.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl glass-panel flex items-center justify-center text-fourstick-accent">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-fourstick-textSecondary">Email Us</div>
+                                <div class="font-display font-medium text-white">contact@fourstick.com</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl glass-panel flex items-center justify-center text-fourstick-accent">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-fourstick-textSecondary">Headquarters</div>
+                                <div class="font-display font-medium text-white">Kpsons Info Tech, Global Operations</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-fourstick-border">
+                    <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.');" class="space-y-6">
+                        <div>
+                            <label class="block text-xs font-medium text-fourstick-textSecondary uppercase tracking-wider mb-2">Your Name</label>
+                            <input type="text" required class="w-full bg-fourstick-bg border border-fourstick-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-fourstick-accent transition-colors" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-fourstick-textSecondary uppercase tracking-wider mb-2">Email Address</label>
+                            <input type="email" required class="w-full bg-fourstick-bg border border-fourstick-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-fourstick-accent transition-colors" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-fourstick-textSecondary uppercase tracking-wider mb-2">Project Details</label>
+                            <textarea rows="4" required class="w-full bg-fourstick-bg border border-fourstick-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-fourstick-accent transition-colors" placeholder="Tell us about your goals..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 rounded-xl bg-fourstick-accent text-white font-medium hover:bg-blue-600 transition-all shadow-lg shadow-fourstick-accent/20">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-fourstick-border bg-fourstick-bg py-16 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="md:col-span-2">
+                <a href="#" class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 rounded-lg bg-fourstick-accent flex items-center justify-center text-white font-bold">F</div>
+                    <span class="font-display font-bold text-lg text-white">FOURSTICK</span>
+                </a>
+                <p class="text-fourstick-textSecondary text-sm max-w-sm mb-6">
+                    Fourstick (a brand of Kpsons Info Tech) is a premier digital agency dedicated to crafting high-performance digital products and experiences.
+                </p>
+                <div class="text-xs text-fourstick-textSecondary">
+                    © 2026 Fourstick / Kpsons Info Tech. All rights reserved.
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Quick Links</h4>
+                <ul class="space-y-3 text-sm text-fourstick-textSecondary">
+                    <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                    <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a></li>
+                    <li><a href="#process" class="hover:text-white transition-colors">Process</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Connect</h4>
+                <ul class="space-y-3 text-sm text-fourstick-textSecondary">
+                    <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">LinkedIn</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Twitter / X</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lucide Icons Initialization -->
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
