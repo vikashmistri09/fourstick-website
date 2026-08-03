@@ -2,3 +2,12 @@ User-agent: *
 Allow: /
 
 Sitemap: https://fourstick.com/sitemap.xml
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
