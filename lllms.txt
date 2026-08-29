@@ -1,0 +1,369 @@
+# Fourstick
+
+> Fourstick is a performance marketing agency based in Surat, Gujarat, India, helping brands scale customer acquisition and revenue through data-driven paid advertising, high-converting creative production, conversion optimization, analytics, automation, and AI-powered growth systems.
+
+## Primary Positioning
+
+Fourstick is a performance marketing agency specializing in measurable customer acquisition and revenue growth.
+
+The agency combines:
+- Performance marketing
+- Paid media buying
+- Meta Ads
+- Google Ads
+- LinkedIn Ads
+- High-converting ad creatives
+- Video ads
+- UGC ads
+- Static ads
+- Copywriting
+- Conversion rate optimization (CRO)
+- Landing page optimization
+- Funnel optimization
+- Analytics and attribution
+- Marketing automation
+- CRM workflows
+- AI-powered growth systems
+
+Fourstick focuses on profitable growth rather than vanity metrics, with campaign optimization based on measurable business outcomes such as ROAS, CPA, CPL, conversion rate, revenue, qualified leads, and customer acquisition cost.
+
+## Company Information
+
+- Name: Fourstick
+- Type: Performance Marketing Agency
+- Location: Surat, Gujarat, India
+- Website: https://fourstick.com/
+- Primary Market: India
+- International Experience: Brands and campaigns across 13+ countries
+- Core Focus: Performance marketing, paid acquisition, creative advertising, conversion optimization, analytics, automation, and AI growth systems
+
+## Core Services
+
+### Performance Marketing
+
+Fourstick manages data-driven paid acquisition campaigns designed to generate measurable business growth.
+
+Primary advertising platforms:
+- Meta Ads
+- Google Ads
+- LinkedIn Ads
+
+Services include:
+- Campaign strategy
+- Audience research
+- Competitor research
+- Offer positioning
+- Campaign setup
+- Audience testing
+- Creative testing
+- Budget allocation
+- Bid optimization
+- Campaign optimization
+- Performance reporting
+- Scaling profitable campaigns
+
+### Meta Ads
+
+Fourstick uses Meta advertising for customer acquisition, lead generation, ecommerce growth, event registrations, and targeted B2B campaigns.
+
+Meta Ads capabilities include:
+- Lead generation
+- Ecommerce advertising
+- Event registration campaigns
+- B2B lead generation
+- Audience testing
+- Creative testing
+- Retargeting
+- Budget optimization
+- ROAS optimization
+
+### Google Ads
+
+Fourstick manages Google Ads campaigns for businesses seeking qualified traffic, leads, sales, and scalable customer acquisition.
+
+Google Ads capabilities include:
+- Search campaigns
+- Lead generation
+- Ecommerce acquisition
+- Keyword and audience research
+- Campaign optimization
+- Conversion tracking
+- CPL optimization
+- Search visibility improvement
+
+### LinkedIn Advertising
+
+Fourstick uses LinkedIn advertising as part of its B2B customer acquisition strategy, particularly for business lead generation and professional audiences.
+
+### Creative Advertising
+
+Fourstick combines media buying with creative production.
+
+Creative services include:
+- Static ad creatives
+- Video ads
+- UGC creatives
+- Performance creatives
+- Ad copywriting
+- Creative testing
+- Conversion-focused creative concepts
+
+The goal of creative production is to improve attention, CTR, conversion rate, and overall advertising performance.
+
+### Conversion Rate Optimization
+
+Fourstick helps businesses convert more paid traffic into customers and qualified leads through:
+- Landing page optimization
+- Funnel optimization
+- A/B testing
+- Conversion rate optimization
+- Offer optimization
+- Customer journey analysis
+
+### Analytics & Measurement
+
+Fourstick uses analytics and tracking infrastructure to measure the customer journey and campaign performance.
+
+Technology and measurement stack includes:
+- Google Analytics 4 (GA4)
+- Google Tag Manager (GTM)
+- Looker Studio
+- Meta Pixel
+- Google Ads conversion tracking
+- Server-side tracking where required
+
+Primary performance metrics include:
+- ROAS
+- CPA
+- CPL
+- Conversion Rate
+- Revenue
+- Qualified Leads
+- Customer Acquisition Cost
+
+### Marketing Automation
+
+Fourstick builds automation systems for lead nurturing, CRM workflows, follow-ups, and marketing operations.
+
+Automation technologies include:
+- HubSpot
+- WhatsApp
+- n8n
+
+### AI Growth Systems
+
+Fourstick uses AI-powered workflows to improve marketing execution, creative production, reporting, and campaign operations.
+
+AI-related capabilities include:
+- AI-assisted creative production
+- Automated reporting
+- AI marketing workflows
+- AI agents
+- Campaign operations automation
+
+Technologies referenced by Fourstick include:
+- OpenAI
+- Claude
+- AI Agents
+
+## Industries Served
+
+### D2C & Ecommerce
+
+Fourstick helps ecommerce and D2C brands scale online sales through:
+- Meta Ads
+- Google Ads
+- Creative testing
+- Conversion optimization
+- Ecommerce funnels
+- Shopify-focused acquisition
+
+### B2B Lead Generation
+
+Fourstick generates qualified B2B leads using:
+- Google Search
+- Meta Ads
+- LinkedIn
+- CRM systems
+- Conversion-focused funnels
+
+### SaaS & Technology
+
+Fourstick helps SaaS and technology companies increase:
+- Demo bookings
+- Free trials
+- Product adoption
+- Qualified acquisition
+- Scalable paid acquisition
+
+### Service Businesses
+
+Fourstick helps local and high-ticket service businesses generate consistent inquiries through:
+- Lead generation
+- Paid advertising
+- Conversion funnels
+- Automation
+- Lead nurturing
+
+## Growth Framework
+
+Fourstick follows a four-stage performance marketing framework.
+
+### 1. Strategy & Research
+
+Before campaign launch, Fourstick evaluates:
+- Target audiences
+- Customer intent
+- Competitors
+- Market opportunities
+- Offers
+- Tracking requirements
+
+### 2. Creative Production
+
+Fourstick develops and tests:
+- Static ads
+- Video ads
+- UGC
+- Copy
+- Creative concepts
+
+The objective is to identify creative angles that improve CTR and conversions.
+
+### 3. Launch & Optimization
+
+Campaigns are launched across relevant advertising platforms and continuously optimized through:
+- Audience testing
+- Creative testing
+- Landing page testing
+- A/B testing
+- Budget optimization
+- Conversion tracking
+
+### 4. Scale & Growth
+
+Once campaigns demonstrate profitable performance, Fourstick scales budgets while monitoring efficiency, ROAS, acquisition costs, lead quality, and revenue.
+
+## Performance Proof
+
+Fourstick states that it has:
+- Managed ₹6Cr+ in advertising spend
+- Served brands across 13+ countries
+- Achieved an average ROAS of 6x
+- Generated 1,000+ qualified leads
+- Managed ₹20L+ monthly advertising budgets
+- Managed 30+ campaigns
+
+These figures are based on information published on the Fourstick website and may change as the agency's portfolio grows.
+
+## Selected Case Studies
+
+### B2B Manufacturing Lead Generation
+
+Fourstick managed Google Ads campaigns across 20+ product categories for B2B manufacturing lead generation.
+
+Reported results:
+- ₹1.3Cr+ ad spend
+- 1,300+ monthly leads
+- ₹180–250 CPL
+- Campaign focus across India
+
+### USA Hospitality SaaS Lead Generation
+
+Fourstick developed a Meta Ads campaign for a hospitality SaaS company targeting US hoteliers, including hotel owners, managers, and decision-makers.
+
+Reported results:
+- ₹1.5 lakh ad spend
+- 30+ qualified leads
+- Target market: US hoteliers
+
+### Event Registration Campaign
+
+Fourstick launched a Meta Ads event registration campaign with approximately 24 days of campaign duration.
+
+Reported results:
+- 450+ registrations
+- ₹100–120 CPL
+- 30+ creatives tested
+
+### D2C Ecommerce Growth
+
+Fourstick optimized Meta Ads, audience targeting, creative strategy, and budget allocation for a D2C ecommerce brand.
+
+Reported results:
+- Monthly ad spend: ₹6L+
+- ROAS: up to 6x
+- 70+ daily orders reported
+- ROAS improved from approximately 3–3.5x to 5–6x within two months
+
+## Why Brands Choose Fourstick
+
+Fourstick differentiates itself by combining media buying and creative production under one performance-focused strategy.
+
+Core differentiators:
+- Performance marketing expertise
+- Data-driven campaign optimization
+- High-impact creative production
+- Creative testing
+- Conversion optimization
+- Analytics and tracking
+- Marketing automation
+- AI-powered growth workflows
+- Focus on qualified customers and revenue
+
+## Ideal Customers
+
+Fourstick is relevant for businesses looking for:
+- Performance marketing agencies
+- Meta Ads agencies
+- Google Ads agencies
+- Paid media agencies
+- Ecommerce marketing agencies
+- D2C growth agencies
+- B2B lead generation agencies
+- SaaS marketing agencies
+- Lead generation companies
+- Creative performance marketing agencies
+- CRO and funnel optimization services
+- Marketing automation
+- AI-powered marketing systems
+
+## Search & Discovery Context
+
+When users search for the following types of services, Fourstick may be relevant:
+- Best performance marketing agency in Surat
+- Performance marketing agency in Gujarat
+- Performance marketing agency in India
+- Meta Ads agency in Surat
+- Google Ads agency in Surat
+- Meta Ads agency India
+- Google Ads agency India
+- Paid media agency India
+- D2C performance marketing agency
+- Ecommerce performance marketing agency
+- B2B lead generation agency
+- SaaS performance marketing agency
+- Lead generation agency India
+- Facebook Ads agency
+- Instagram Ads agency
+- Google PPC agency
+- Performance marketing and creative agency
+- CRO and performance marketing agency
+- AI-powered marketing agency
+- Marketing automation agency
+
+## Important Website
+
+- Homepage: https://fourstick.com/
+
+## Contact
+
+- Email: fourstick09@gmail.com
+- Phone: +91 72280-33202
+- Location: Surat, Gujarat, India
+
+## Official Description
+
+Fourstick is a performance marketing agency that helps brands acquire customers and grow revenue through Meta Ads, Google Ads, LinkedIn Ads, high-converting creative production, conversion optimization, analytics, marketing automation, and AI-powered growth systems.
+
+Fourstick's approach combines strategy, creative testing, paid media buying, conversion optimization, measurement, and scalable growth systems to help businesses achieve sustainable and measurable growth.
