@@ -123,8 +123,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         a, button { -webkit-tap-highlight-color: transparent; }
         :focus-visible { outline: 2px solid #a5b4fc; outline-offset: 3px; }
         .industries, .framework, .growth.stack { position: relative; z-index: 1; }
+        /* Keep the client-logo marquee moving even when reduced-motion is enabled. */
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+            html { scroll-behavior: auto !important; }
+            .animate-marquee { animation: marquee 25s linear infinite !important; }
+            a, button { transition-duration: .01ms !important; }
         }
     </style>
 </head>
